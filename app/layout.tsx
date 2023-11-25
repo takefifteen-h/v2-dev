@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
+
+import type { Metadata } from "next";
+
 import "./globals.css";
+
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Ismail Shaikhnag - Web Developer",
@@ -15,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.className} antialiased`}>{children}</body>
+      <body className={`${GeistSans.className} antialiased`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
