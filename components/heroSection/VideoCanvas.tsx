@@ -14,17 +14,20 @@ const VideoCanvas = () => {
     ? "/images/bg-mobile-poster.webp"
     : "/images/bg-desktop-poster.webp";
   return (
-    <video
-      poster={videoPoster}
-      preload="auto"
-      playsInline
-      autoPlay
-      muted
-      loop
-      className="absolute h-full w-full object-cover"
-    >
-      <source src={videoSource} type="video/mp4" />
-    </video>
+    <>
+      <video
+        poster={videoPoster}
+        preload="auto"
+        playsInline
+        autoPlay
+        muted
+        loop
+        className="absolute h-full w-full object-cover"
+      >
+        <source src={videoSource} type="video/mp4" />
+      </video>
+      <div className="absolute h-full w-full bg-black bg-opacity-40 md:bg-opacity-20"></div>
+    </>
   );
 };
 
