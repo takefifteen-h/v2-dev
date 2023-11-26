@@ -23,8 +23,11 @@ const containerVariants: Variants = {
   },
   exit: {
     height: 0,
+    borderBottomLeftRadius: "100%",
+    borderBottomRightRadius: "100%",
     transition: {
       ease: "easeInOut",
+      duration: 1,
     },
   },
 };
@@ -57,11 +60,12 @@ const GreetingAnimation: React.FC = () => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="fixed top-0 left-0 w-full h-screen overflow-hidden z-20 bg-black"
+          className="fixed top-0 left-0 w-full h-[150vh] overflow-hidden z-20 bg-black"
+          style={{ overflow: "hidden" }}
         >
           <motion.h2
             variants={containerVariants}
-            className="text-white text-6xl font-bold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            className="text-white text-6xl font-bold absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
             • {greetings[greetingIndex]}
           </motion.h2>
