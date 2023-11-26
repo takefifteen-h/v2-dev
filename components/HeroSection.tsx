@@ -12,8 +12,8 @@ const HeroSection = () => {
     ? "/videos/bg-mobile.mp4"
     : "/videos/bg-desktop.mp4";
   const videoPoster = isMobile
-    ? "/videos/bg-mobile-poster.jpg"
-    : "/videos/bg-desktop-poster.jpg";
+    ? "/images/bg-mobile-poster.webp"
+    : "/images/bg-desktop-poster.webp";
 
   return (
     <div className="relative h-full w-full overflow-hidden">

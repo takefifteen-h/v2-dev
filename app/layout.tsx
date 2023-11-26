@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 const GreetingAnimation = dynamic(
   () => import("@/components/GreetingAnimation"),
   {
     ssr: false,
-  }
+  },
 );
 
 export const metadata: Metadata = {
@@ -24,9 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${GeistSans.className} antialiased relative`}
-      >
+      <body className={`${GeistSans.className} relative antialiased`}>
         <GreetingAnimation />
 
         <Navbar />
