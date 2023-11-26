@@ -23,9 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${GeistSans.className} relative antialiased`}>
-        {/* <GreetingAnimation /> */}
+    <html lang="en" style={{ scrollBehavior: "smooth" }}>
+      <body
+        className={`${GeistSans.className} relative overflow-hidden antialiased`}
+      >
+        <GreetingAnimation />
 
         <Navbar />
 
