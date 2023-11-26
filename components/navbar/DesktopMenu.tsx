@@ -7,16 +7,17 @@ import {
   LuPhone as Phone,
   LuMail as Mail,
 } from "react-icons/lu";
+import { PiHandshake } from "react-icons/pi";
 import NavLink from "./NavLink";
 
 const DesktopMenu = () => {
   return (
     <ul className="flex items-center justify-between space-x-6">
       <li>
-        <NavLink href="/" icon={<Home />} text="Home" />
+        <NavLink href="#about" icon={<About />} text="About" />
       </li>
       <li>
-        <NavLink href="#about" icon={<About />} text="About" />
+        <NavLink href="#services" icon={<PiHandshake />} text="Services" />
       </li>
       <li>
         <NavLink href="#projects" icon={<Target />} text="Projects" />

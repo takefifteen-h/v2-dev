@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 import { useWindowWidth } from "@/hooks/useWindowWidth";
 
@@ -48,15 +49,16 @@ const Navbar = () => {
       className="fixed top-0 z-40 flex h-navbar-mobile w-full items-center justify-center bg-[#121212d9] px-5 text-white md:h-navbar-desktop  md:justify-between"
       style={{ backdropFilter: "blur(10px) saturate(180%)" }}
     >
-      <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
-        <Image
-          src="../logos/ismail-white.svg"
-          alt="Logo Of Ismail Shaikhnag"
-          fill
-          priority
-        />
-      </div>
-
+      <Link href="/">
+        <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
+          <Image
+            src="../logos/ismail-white.svg"
+            alt="Logo Of Ismail Shaikhnag"
+            fill
+            priority
+          />
+        </div>
+      </Link>
       {/* displaty desktop menu if the window width is greater than 768px */}
       {windowWidth && windowWidth > MOBILE_WIDTH ? <DesktopMenu /> : null}
     </motion.nav>
