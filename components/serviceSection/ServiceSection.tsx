@@ -7,7 +7,7 @@ import serviceImg from "../../public/images/icons/services.svg";
 
 const ServiceSection = () => {
   return (
-    <div className="master-container  pt-[64px] lg:pt-[72px]">
+    <div className="master-container  py-[64px] lg:py-[72px]">
       {/* Header */}
       <FadeInContent margin="0px">
         <header className="flex w-full select-none items-center justify-start gap-x-2">
