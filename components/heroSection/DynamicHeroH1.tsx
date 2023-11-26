@@ -51,7 +51,7 @@ const DynamicHeroH1 = () => {
         initial="visible"
         animate="visible"
         key={adjectives[adjectiveIndex]}
-        className={`gradient ${gradients[gradientIndex]} animate-gradient`}
+        className={`gradient ${gradients[gradientIndex]} animate-gradient w-max`}
       >
         {adjectives[adjectiveIndex]}
       </motion.span>{" "}
