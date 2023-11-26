@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
+import GreetingAnimation from "@/components/GreetingAnimation";
 
 export const metadata: Metadata = {
   title: "Ismail Shaikhnag - Web Developer",
@@ -19,8 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.className} antialiased`}>
-        <Navbar />
+      <body className={`${GeistSans.className} antialiased relative`}>
+        <GreetingAnimation />
+
         {children}
       </body>
     </html>
