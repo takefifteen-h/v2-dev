@@ -26,3 +26,257 @@
     max-width: 1536px;
   }
 }
+
+/* classes to animate the color of the font */
+
+.gradient {
+  -webkit-text-fill-color: transparent;
+  -text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 100% 500%;
+}
+
+.box.g1,
+.gradient.g1 {
+  background-image: #2d4de0 !important;
+  background-image: -moz-linear-gradient(
+    49deg,
+    #2d4de0 0,
+    #9f71f0 30%,
+    #fc6277 58%,
+    #f8ef6f 95%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    49deg,
+    #2d4de0 0,
+    #9f71f0 30%,
+    #fc6277 58%,
+    #f8ef6f 95%
+  ) !important;
+  background-image: linear-gradient(
+    49deg,
+    #2d4de0 0,
+    #9f71f0 30%,
+    #fc6277 58%,
+    #f8ef6f 95%
+  ) !important;
+}
+
+.box.g2,
+.gradient.g2 {
+  background-image: #6a6adc !important;
+  background-image: -moz-linear-gradient(
+    117deg,
+    #6a6adc 0,
+    #b2f0b7 63%,
+    #7dc7f0 100%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    117deg,
+    #6a6adc 0,
+    #b2f0b7 63%,
+    #7dc7f0 100%
+  ) !important;
+  background-image: linear-gradient(
+    117deg,
+    #6a6adc 0,
+    #b2f0b7 63%,
+    #7dc7f0 100%
+  ) !important;
+}
+
+.box.g3,
+.gradient.g3 {
+  background-image: #fd8afe !important;
+  background-image: -moz-linear-gradient(
+    243deg,
+    #fd8afe 0,
+    #6cc3fa 63%,
+    #56fcfe 100%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    243deg,
+    #fd8afe 0,
+    #6cc3fa 63%,
+    #56fcfe 100%
+  ) !important;
+  background-image: linear-gradient(
+    243deg,
+    #fd8afe 0,
+    #6cc3fa 63%,
+    #56fcfe 100%
+  ) !important;
+}
+
+.box.g4,
+.gradient.g4 {
+  background-image: #e85602 !important;
+  background-image: -moz-linear-gradient(
+    43deg,
+    #e85602 0,
+    #f5b46c 29%,
+    #d9caf4 68%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    43deg,
+    #e85602 0,
+    #f5b46c 29%,
+    #d9caf4 68%
+  ) !important;
+  background-image: linear-gradient(
+    43deg,
+    #e85602 0,
+    #f5b46c 29%,
+    #d9caf4 68%
+  ) !important;
+}
+
+.box.g5,
+.gradient.g5 {
+  background-image: #fbfe22 !important;
+  background-image: -moz-linear-gradient(
+    43deg,
+    #fbfe22 0,
+    #f3eda6 40%,
+    #ce88d9 100%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    43deg,
+    #fbfe22 0,
+    #f3eda6 40%,
+    #ce88d9 100%
+  ) !important;
+  background-image: linear-gradient(
+    43deg,
+    #fbfe22 0,
+    #f3eda6 40%,
+    #ce88d9 100%
+  ) !important;
+}
+
+.box.g6,
+.gradient.g6 {
+  background-image: #49d4fc !important;
+  background-image: -moz-linear-gradient(
+    231deg,
+    #49d4fc 0,
+    #908df4 26%,
+    #d95075 67%,
+    #fac9b6 100%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    231deg,
+    #49d4fc 0,
+    #908df4 26%,
+    #d95075 67%,
+    #fac9b6 100%
+  ) !important;
+  background-image: linear-gradient(
+    231deg,
+    #49d4fc 0,
+    #908df4 26%,
+    #d95075 67%,
+    #fac9b6 100%
+  ) !important;
+}
+
+.box.g7,
+.gradient.g7 {
+  background-image: #3f3a74 !important;
+  background-image: -moz-linear-gradient(
+    231deg,
+    #3f3a74 0,
+    #5166d7 60%,
+    #43f59f 100%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    231deg,
+    #3f3a74 0,
+    #5166d7 60%,
+    #43f59f 100%
+  ) !important;
+  background-image: linear-gradient(
+    231deg,
+    #3f3a74 0,
+    #5166d7 60%,
+    #43f59f 100%
+  ) !important;
+}
+
+.box.g8,
+.gradient.g8 {
+  background-image: -webkit-linear-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#ff0844),
+    to(#ffb199)
+  ) !important;
+  background-image: -o-linear-gradient(
+    bottom,
+    #ff0844 0,
+    #ffb199 100%
+  ) !important;
+  background-image: linear-gradient(to top, #ff0844 0, #ffb199 100%) !important;
+}
+
+.box.g9,
+.gradient.g9 {
+  background-image: -moz-linear-gradient(
+    231deg,
+    #49d4fc 0,
+    #908df4 26%,
+    #d95075 67%,
+    #fac9b6 100%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    231deg,
+    #49d4fc 0,
+    #908df4 26%,
+    #d95075 67%,
+    #fac9b6 100%
+  ) !important;
+  background-image: linear-gradient(
+    231deg,
+    #49d4fc 0,
+    #908df4 26%,
+    #d95075 67%,
+    #fac9b6 100%
+  ) !important;
+}
+
+.box.g10,
+.gradient.g10 {
+  background-image: -moz-linear-gradient(
+    to right,
+    #121212 0,
+    #121212 100%
+  ) !important;
+  background-image: -webkit-linear-gradient(
+    to right,
+    #121212 0,
+    #121212 100%
+  ) !important;
+  background-image: linear-gradient(
+    to right,
+    #121212 0,
+    #121212 100%
+  ) !important;
+}
+
+.box.animate-gradient,
+.gradient.animate-gradient {
+  animation: gradient 1s ease infinite;
+  animation-direction: alternate;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 100%;
+  }
+}
