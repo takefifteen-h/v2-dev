@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* set a navbar height of 85px as a variable */
+:root {
+  --navbar-height: 85px;
+}
+
