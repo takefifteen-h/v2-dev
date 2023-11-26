@@ -299,3 +299,8 @@
 .text-works-title {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
+
+.section-heading {
+  -webkit-clip-path: polygon(0 0,100% 0%,100% 100%,0 100%);
+  clip-path: polygon(0 0,100% 0%,100% 100%,0 100%)
+}
