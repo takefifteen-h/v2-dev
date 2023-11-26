@@ -246,24 +246,6 @@
   ) !important;
 }
 
-.box.g10,
-.gradient.g10 {
-  background-image: -moz-linear-gradient(
-    to right,
-    #121212 0,
-    #121212 100%
-  ) !important;
-  background-image: -webkit-linear-gradient(
-    to right,
-    #121212 0,
-    #121212 100%
-  ) !important;
-  background-image: linear-gradient(
-    to right,
-    #121212 0,
-    #121212 100%
-  ) !important;
-}
 
 .box.animate-gradient,
 .gradient.animate-gradient {
