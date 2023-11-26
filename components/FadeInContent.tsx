@@ -6,6 +6,7 @@ import {Variants, motion} from "framer-motion"
 type Props = {
     children: React.ReactNode;
     delay? : number;
+    margin?: string;
 }
 
 const containerVariants: Variants = {
@@ -19,7 +20,7 @@ const containerVariants: Variants = {
       },
 }
 
-const FadeInContent: React.FC<Props> = ({children, delay = 0}) => {
+const FadeInContent: React.FC<Props> = ({children, delay = 0, margin = "-100px"}) => {
   return (
    <motion.div
    variants={containerVariants}
@@ -31,7 +32,7 @@ const FadeInContent: React.FC<Props> = ({children, delay = 0}) => {
   }}
    viewport={{
      once: true,
-     margin: "-100px",
+     margin: margin,
     }}
    >
 {children}
