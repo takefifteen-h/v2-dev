@@ -246,7 +246,6 @@
   ) !important;
 }
 
-
 .box.animate-gradient,
 .gradient.animate-gradient {
   animation: gradient 1s ease infinite;
@@ -261,4 +260,42 @@
   100% {
     background-position: 0 100%;
   }
+}
+
+/* custom text sizes */
+
+.text-body-1 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+.text-body-2 {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.text-body-3 {
+  font-size: 1.1rem;
+}
+
+.text-body-4 {
+  font-size: clamp(0.75rem, 3vw, 1rem);
+}
+
+.text-heading-1 {
+  font-size: clamp(2.5rem, 6.5vw, 10rem);
+}
+
+.text-heading-3 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+}
+
+.text-special {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+}
+
+.text-title {
+  font-size: clamp(3rem, 14vw, 9rem);
+}
+
+.text-works-title {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 }

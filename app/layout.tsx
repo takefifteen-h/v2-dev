@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${GeistSans.className} relative antialiased`}>
-        <GreetingAnimation />
+        {/* <GreetingAnimation /> */}
 
         <Navbar />
 

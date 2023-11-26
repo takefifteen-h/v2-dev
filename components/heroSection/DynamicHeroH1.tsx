@@ -15,7 +15,7 @@ const adjectives = [
   "A Dynamic",
 ];
 
-const gradients = ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9", "g10"];
+const gradients = ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9"];
 
 const adjectiveVariants = {
   hidden: {
@@ -44,7 +44,7 @@ const DynamicHeroH1 = () => {
   }, []);
 
   return (
-    <h1 className="text-4xl font-extrabold md:max-w-[80%] md:text-7xl">
+    <h1 className="text-5xl font-extrabold md:max-w-[80%] md:text-7xl lg:text-8xl">
       Cultivating {""} <br />
       <motion.span
         variants={adjectiveVariants}
