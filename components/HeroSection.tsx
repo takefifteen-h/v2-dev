@@ -2,18 +2,21 @@
 
 import React from "react";
 
+import { useWindowWidth } from "@/hooks/useWindowWidth";
+
 const HeroSection = () => {
-  const isMobile = window.innerWidth <= 768;
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth ? windowWidth < 768 : false;
+
   const videoSource = isMobile
     ? "/videos/bg-mobile.mp4"
     : "/videos/bg-desktop.mp4";
-
   const videoPoster = isMobile
     ? "/videos/bg-mobile-poster.jpg"
     : "/videos/bg-desktop-poster.jpg";
 
   return (
-    <div className="relative overflow-hidden w-full h-full">
+    <div className="relative h-full w-full overflow-hidden">
       <video
         poster={videoPoster}
         preload="auto"
@@ -21,7 +24,7 @@ const HeroSection = () => {
         autoPlay
         muted
         loop
-        className="w-full h-full absolute object-cover"
+        className="absolute h-full w-full object-cover"
       >
         <source src={videoSource} type="video/mp4" />
       </video>
