@@ -16,13 +16,13 @@ const DesktopMenu = () => {
         <NavLink href="/" icon={<Home />} text="Home" />
       </li>
       <li>
-        <NavLink href="/about" icon={<About />} text="About" />
+        <NavLink href="#about" icon={<About />} text="About" />
       </li>
       <li>
-        <NavLink href="/projects" icon={<Target />} text="Projects" />
+        <NavLink href="#projects" icon={<Target />} text="Projects" />
       </li>
       <li>
-        <NavLink href="/contact" icon={<Phone />} text="Contact" />
+        <NavLink href="#contact" icon={<Phone />} text="Contact" />
       </li>
     </ul>
   );

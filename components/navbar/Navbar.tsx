@@ -2,20 +2,10 @@
 
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
 import { useWindowWidth } from "@/hooks/useWindowWidth";
-
-import { PiHouse as Home } from "react-icons/pi";
-import { IoPersonOutline as About } from "react-icons/io5";
-import {
-  LuTarget as Target,
-  LuPhone as Phone,
-  LuMail as Mail,
-} from "react-icons/lu";
-import NavLink from "./NavLink";
 
 const DesktopMenu = dynamic(() => import("./DesktopMenu"), { ssr: false });
 
@@ -70,13 +60,6 @@ const Navbar = () => {
       {/* displaty desktop menu if the window width is greater than 768px */}
       {windowWidth && windowWidth > MOBILE_WIDTH ? <DesktopMenu /> : null}
 
-      {/* {windowWidth && windowWidth > MOBILE_WIDTH ? (
-        <NavLink
-          href="mailto:shaikhnagismail@gmail.com"
-          icon={<Mail />}
-          text="shaikhnagismail@gmail.com"
-        />
-      ) : null} */}
     </motion.nav>
   );
 };
