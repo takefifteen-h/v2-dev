@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 z-50 max-h-[90px] flex w-full items-center justify-between bg-secondary-100 px-5 py-3">
+    <nav className="fixed top-0 z-10 h-[90px] flex w-full items-center justify-between bg-secondary-100 px-5 py-3">
       <div className="relative h-[50px] w-[150px]">
         <Image src="../logos/ismail-black.svg" alt="Ismail Shaikhnag" fill />
       </div>
