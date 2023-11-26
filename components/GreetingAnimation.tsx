@@ -51,7 +51,7 @@ const GreetingAnimation: React.FC = () => {
         <motion.div
           variants={containerVariants}
           exit="exit"
-          className="fixed left-0 top-0 z-20 h-screen w-full overflow-hidden bg-black"
+          className="fixed left-0 top-0 z-50 h-screen w-full overflow-hidden bg-black"
           style={{ overflow: "hidden" }}
         >
           <motion.h2
