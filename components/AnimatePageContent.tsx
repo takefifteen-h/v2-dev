@@ -10,7 +10,7 @@ type AnimatePageContentProps = {
 const containerVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: "calc(100vh - 90px)",
+    y: "100vh",
   },
   visible: {
     opacity: 1,
