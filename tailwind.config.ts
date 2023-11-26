@@ -14,7 +14,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       height: {
-        navbar: "var(--navbar-height)",
+        "navbar-desktop": "85px",
+        "navbar-mobile": "70px",
       },
     },
   },
