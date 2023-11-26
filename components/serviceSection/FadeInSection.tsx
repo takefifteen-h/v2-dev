@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-type BlackToWhiteProps = {
+type DarkToLightProps = {
   startColor: "rgb(14 14 14)";
   endColor: "hsl(0, 0%, 100%)";
   children: React.ReactNode;
@@ -11,7 +11,7 @@ type BlackToWhiteProps = {
   className?: string;
 };
 
-type WhiteToBlackProps = {
+type LightToDarkProps = {
   startColor: "hsl(0, 0%, 100%)";
   endColor: "rgb(14 14 14)";
   children: React.ReactNode;
@@ -19,7 +19,7 @@ type WhiteToBlackProps = {
   className?: string;
 };
 
-type Props = BlackToWhiteProps | WhiteToBlackProps;
+type Props = DarkToLightProps | LightToDarkProps;
 
 const FadeInSection: React.FC<Props> = ({
   children,
