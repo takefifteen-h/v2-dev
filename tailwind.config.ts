@@ -16,6 +16,7 @@ const config: Config = {
       height: {
         "navbar-desktop": "85px",
         "navbar-mobile": "70px",
+        screen: "100dvh",
       },
     },
   },
