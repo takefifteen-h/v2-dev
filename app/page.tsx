@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <main className="h-screen">
+    <main className="vh-100">
       <HeroSection />
     </main>
   );

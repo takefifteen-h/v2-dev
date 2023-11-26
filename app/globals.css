@@ -7,3 +7,8 @@
   --navbar-height: 85px;
 }
 
+/* custom viewport height class using  100 dvh and 100 vh as fallback */
+.vh-100 {
+  height: 100vh;
+  height: 100dvh;
+}
