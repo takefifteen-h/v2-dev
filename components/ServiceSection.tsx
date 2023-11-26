@@ -1,25 +1,26 @@
-import React from 'react'
-import Image from 'next/image' 
-import ServiceSvg from './ui/ServiceSvg'
+import React from "react";
+import ServiceSvg from "./ui/ServiceSvg";
+import FadeInContent from "./FadeInContent";
 
 const ServiceSection = () => {
   return (
-    <section className='my-[10%] section-header master-container' aria-label='services'>
-
-        {/* Header */}
-        <header className='select-none flex items-center gap-x-2'>
-           <div className="relative w-[30px] h-[30px]">
-           {/* <Image 
-            src="images/icons/icon-1.svg"
-            alt="services icon"
-            fill
-            /> */}
+    <section
+      className="section-header master-container my-[10%]"
+      aria-label="services"
+    >
+      {/* Header */}
+      <FadeInContent margin="-50px">
+        <header className="flex select-none items-center gap-x-2">
+          <div className="relative h-[30px] w-[30px] md:h-[36px] md:w-[36px]">
             <ServiceSvg />
-           </div>
-        <h2 className="w-fit text-5xl sm:text-heading-2 font-medium uppercase text-secondary-600">services</h2>
+          </div>
+          <h2 className="sm:text-heading-2 text-secondary-600 w-fit text-5xl font-medium uppercase">
+            services
+          </h2>
         </header>
+      </FadeInContent>
     </section>
-  )
-}
+  );
+};
 
-export default ServiceSection
+export default ServiceSection;
