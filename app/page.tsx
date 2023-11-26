@@ -2,12 +2,8 @@ import HeroSection from "@/components/heroSection/HeroSection";
 
 export default function Home() {
   return (
-    <main className="vh-100">
+    <main>
       <HeroSection />
-
-      {/* add a bunch of lorem ipsum */}
-      <div className="h-screen bg-black"></div>
-      
     </main>
   );
 }
