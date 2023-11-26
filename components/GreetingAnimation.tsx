@@ -15,12 +15,6 @@ const greetings = [
 ];
 
 const containerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
   exit: {
     height: 0,
     transition: {
@@ -50,14 +44,12 @@ const GreetingAnimation: React.FC = () => {
 
     return () => clearTimeout(timeoutId); // Clean up on unmount
   }, [greetingIndex]);
-  
+
   return (
     <AnimatePresence>
       {!isFinished ? (
         <motion.div
           variants={containerVariants}
-          initial="hidden"
-          animate="visible"
           exit="exit"
           className="fixed top-0 left-0 w-full h-screen overflow-hidden z-20 bg-black"
           style={{ overflow: "hidden" }}
