@@ -6,8 +6,8 @@ import { motion, Variants } from "framer-motion";
 type id = "about" | "services" | "projects" | "contact";
 
 type DarkToLightProps = {
-  startColor: "rgb(14 14 14)";
-  endColor: "hsl(0, 0%, 100%)";
+  startColor: "rgb(14, 14, 14)";
+  endColor: "rgb(255, 255, 255)";
   children: React.ReactNode;
   delay?: number;
   className?: string;
@@ -15,8 +15,8 @@ type DarkToLightProps = {
 };
 
 type LightToDarkProps = {
-  startColor: "hsl(0, 0%, 100%)";
-  endColor: "rgb(14 14 14)";
+  startColor: "rgb(255, 255, 255)";
+  endColor: "rgb(14, 14, 14)";
   children: React.ReactNode;
   delay?: number;
   className?: string;

@@ -3,6 +3,8 @@ import FadeInContent from "../FadeInContent";
 import ServiceSectionItem from "./ServiceSectionItem";
 import Image from "next/image";
 
+import serviceImg from "../../public/images/icons/services.svg";
+
 const ServiceSection = () => {
   return (
     <div className="master-container  pt-[64px] lg:pt-[72px]">
@@ -10,7 +12,7 @@ const ServiceSection = () => {
       <FadeInContent margin="0px">
         <header className="flex w-full select-none items-center justify-start gap-x-2">
           <div className="relative h-[30px] w-[30px] md:h-[48px] md:w-[48px] lg:h-[56px] lg:w-[56px]">
-            <Image src="images/icons/icon-1.svg" alt="services icon" fill />
+            <Image src={serviceImg} alt="services icon" fill />
           </div>
           <h2 className="w-fit text-5xl font-semibold uppercase md:text-6xl lg:text-7xl xl:text-8xl">
             services
