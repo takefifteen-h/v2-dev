@@ -1,35 +1,19 @@
-"use client";
-
 import React from "react";
 
-import { useWindowWidth } from "@/hooks/useWindowWidth";
+import VideoCanvas from "./VideoCanvas";
+import DynamicHeroH1 from "./DynamicHeroH1";
 
 const HeroSection = () => {
-  const windowWidth = useWindowWidth();
-  const isMobile = windowWidth ? windowWidth < 768 : false;
-
-  const videoSource = isMobile
-    ? "/videos/bg-mobile.mp4"
-    : "/videos/bg-desktop.mp4";
-  const videoPoster = isMobile
-    ? "/images/bg-mobile-poster.webp"
-    : "/images/bg-desktop-poster.webp";
-
   return (
-    <div className="relative h-full w-full overflow-hidden">
-      <video
-        poster={videoPoster}
-        preload="auto"
-        playsInline
-        autoPlay
-        muted
-        loop
-        className="absolute h-full w-full object-cover"
-      >
-        <source src={videoSource} type="video/mp4" />
-      </video>
-      HeroSection
-    </div>
+    <section className="relative h-[80dvh] w-full overflow-hidden md:h-screen">
+      <VideoCanvas />
+
+      <div className="absolute left-0 top-1/2 z-10 mr-auto w-full -translate-y-1/2 text-white">
+        <div className="master-container">
+          <DynamicHeroH1 />
+        </div>
+      </div>
+    </section>
   );
 };
 
