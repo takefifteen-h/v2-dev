@@ -45,7 +45,7 @@ const Navbar = () => {
     <motion.nav
       variants={navbarVariants}
       animate={isScrolled ? "hidden" : "visible"}
-      className="fixed top-0 z-10 flex h-navbar-mobile w-full items-center justify-center bg-[#121212d9] px-5 text-white md:h-navbar-desktop  md:justify-between"
+      className="fixed top-0 z-40 flex h-navbar-mobile w-full items-center justify-center bg-[#121212d9] px-5 text-white md:h-navbar-desktop  md:justify-between"
       style={{ backdropFilter: "blur(10px) saturate(180%)" }}
     >
       <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
