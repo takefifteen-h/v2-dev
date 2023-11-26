@@ -3,12 +3,15 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
+type id = "about" | "services" | "projects" | "contact";
+
 type DarkToLightProps = {
   startColor: "rgb(14 14 14)";
   endColor: "hsl(0, 0%, 100%)";
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  id?: id;
 };
 
 type LightToDarkProps = {
@@ -17,6 +20,7 @@ type LightToDarkProps = {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  id?: id;
 };
 
 type Props = DarkToLightProps | LightToDarkProps;
@@ -27,6 +31,7 @@ const FadeInSection: React.FC<Props> = ({
   endColor,
   delay = 0,
   className,
+  id,
   ...props
 }) => {
   const sectionVariants: Variants = {
@@ -47,6 +52,7 @@ const FadeInSection: React.FC<Props> = ({
 
   return (
     <motion.section
+      id={id}
       variants={sectionVariants}
       initial="initial"
       whileInView="animate"
