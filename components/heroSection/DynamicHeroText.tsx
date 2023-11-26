@@ -30,7 +30,7 @@ const adjectiveVariants = {
   },
 };
 
-const DynamicHeroH1 = () => {
+const DynamicHeroText = () => {
   const [adjectiveIndex, setAdjectiveIndex] = useState(0);
   const [gradientIndex, setGradientIndex] = useState(0);
 
@@ -61,4 +61,4 @@ const DynamicHeroH1 = () => {
   );
 };
 
-export default DynamicHeroH1;
+export default DynamicHeroText;
