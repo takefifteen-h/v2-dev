@@ -51,12 +51,12 @@ const GreetingAnimation: React.FC = () => {
         <motion.div
           variants={containerVariants}
           exit="exit"
-          className="fixed top-0 left-0 w-full vh-100 overflow-hidden z-20 bg-black"
+          className="fixed left-0 top-0 z-20 h-screen w-full overflow-hidden bg-black"
           style={{ overflow: "hidden" }}
         >
           <motion.h2
             variants={containerVariants}
-            className="text-white text-5xl md:text-6xl font-semibold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-x-1.5 w-max"
+            className="absolute left-1/2 top-1/2 flex w-max -translate-x-1/2 -translate-y-1/2 transform items-center gap-x-1.5 text-5xl font-semibold text-white md:text-6xl"
           >
             <span>•</span> {greetings[greetingIndex]}
           </motion.h2>
