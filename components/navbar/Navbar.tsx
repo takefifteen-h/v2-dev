@@ -59,7 +59,6 @@ const Navbar = () => {
 
       {/* displaty desktop menu if the window width is greater than 768px */}
       {windowWidth && windowWidth > MOBILE_WIDTH ? <DesktopMenu /> : null}
-
     </motion.nav>
   );
 };
