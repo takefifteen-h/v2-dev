@@ -13,11 +13,11 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
   items,
 }) => {
   return (
-    <div className=" mt-8 grid grid-cols-1 gap-y-5 md:grid-cols-2 md:gap-24">
+    <div className=" mt-8 grid grid-cols-1 gap-y-5 md:mt-16 md:grid-cols-2 md:gap-24 lg:mt-24">
       <div className="flex flex-col gap-y-4">
         {/* Header */}
         <FadeInContent delay={0}>
-          <h3 className="text-heading-3 font-semibold leading-tight 2xl:text-7xl">
+          <h3 className="text-heading-3 font-medium capitalize leading-tight 2xl:text-7xl">
             {header}
           </h3>
         </FadeInContent>
@@ -27,12 +27,12 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
             {paragraph}
           </p>
         </FadeInContent>
-      </div>
 
-      {/* line on sm screens */}
-      <FadeInContent delay={0.5} margin="0px">
-        <hr className="bg-accent-100 flex h-1 w-full opacity-50 md:hidden" />
-      </FadeInContent>
+        {/* line on sm screens */}
+        <FadeInContent delay={0.5} margin="0px">
+          <hr className="bg-accent-100 mt-4 flex h-1 w-full opacity-50 md:hidden" />
+        </FadeInContent>
+      </div>
 
       {/* Content */}
       <div className=" text-secondary-500  select-none leading-[2.3rem] md:leading-[2.5rem] lg:leading-[3.4rem]">
