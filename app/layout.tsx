@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <body
-        className={`${GeistSans.className} relative overflow-hidden antialiased`}
+        className={`${GeistSans.className} relative overflow-x-hidden antialiased`}
       >
         <GreetingAnimation />
 
