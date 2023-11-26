@@ -284,6 +284,10 @@
   font-size: clamp(2.5rem, 6.5vw, 10rem);
 }
 
+.text-heading-2 {
+  font-size: clamp(2.4rem,8vw,10rem);
+}
+
 .text-heading-3 {
   font-size: clamp(2rem, 5vw, 2.75rem);
 }
@@ -304,3 +308,4 @@
   -webkit-clip-path: polygon(0 0,100% 0%,100% 100%,0 100%);
   clip-path: polygon(0 0,100% 0%,100% 100%,0 100%)
 }
+
