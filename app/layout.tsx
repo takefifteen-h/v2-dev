@@ -1,10 +1,15 @@
 import { GeistSans } from "geist/font/sans";
-
 import type { Metadata } from "next";
-
+import dynamic from "next/dynamic";
 import "./globals.css";
 
-import GreetingAnimation from "@/components/GreetingAnimation";
+import Navbar from "@/components/Navbar";
+const GreetingAnimation = dynamic(
+  () => import("@/components/GreetingAnimation"),
+  {
+    ssr: false,
+  }
+);
 
 export const metadata: Metadata = {
   title: "Ismail Shaikhnag - Web Developer",
@@ -21,6 +26,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${GeistSans.className} antialiased relative`}>
         <GreetingAnimation />
+
+        <Navbar />
 
         {children}
       </body>
