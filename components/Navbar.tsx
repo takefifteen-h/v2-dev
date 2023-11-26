@@ -6,10 +6,13 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 z-10 h-navbar flex w-full items-center justify-between bg-secondary-100 px-5 py-3">
+    <nav
+      className="fixed top-0 z-10 h-navbar flex w-full items-center text-white justify-between bg-[#121212d9] px-5 py-3"
+      style={{ backdropFilter: "blur(10px) saturate(180%)" }}
+    >
       <div className="relative h-[50px] w-[150px]">
         <Image
-          src="../logos/ismail-black.svg"
+          src="../logos/ismail-white.svg"
           alt="Ismail Shaikhnag"
           fill
           priority
