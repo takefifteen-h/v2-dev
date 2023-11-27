@@ -2,23 +2,22 @@ import Link from "next/link";
 import React from "react";
 
 type ButtonProps = {
-  label: string;
   type: "live" | "code";
   link: string;
 };
 
 // btn component that sends user to live site or github code
-const ProjectCardButton: React.FC<ButtonProps> = ({ label, type, link }) => {
+const ProjectCardButton: React.FC<ButtonProps> = ({ type, link }) => {
   if (type === "live") {
     return (
       <Link
         href={link}
         target="_blank"
         aria-label="live site"
-        className="group relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-pink-200 group-hover:from-pink-500 group-hover:to-orange-400 dark:text-white dark:focus:ring-pink-800"
+        className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-pink-200 group-hover:from-pink-500 group-hover:to-orange-400 dark:text-white dark:focus:ring-pink-800"
       >
-        <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-          {label}
+        <span className="relative rounded-md bg-white px-5 py-2 capitalize transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+          {type}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -43,9 +42,9 @@ const ProjectCardButton: React.FC<ButtonProps> = ({ label, type, link }) => {
         href={link}
         target="_blank"
         aria-label="github code"
-        className="group relative mb-2 mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white dark:focus:ring-blue-800"
+        className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 group-hover:from-purple-600 group-hover:to-blue-500 dark:text-white dark:focus:ring-blue-800"
       >
-        <span className="relative flex rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+        <span className="relative flex rounded-md bg-white px-5 py-2 capitalize transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
           <svg
             className="mr-2 h-4 w-4"
             aria-hidden="true"
@@ -59,7 +58,7 @@ const ProjectCardButton: React.FC<ButtonProps> = ({ label, type, link }) => {
               clipRule="evenodd"
             />
           </svg>
-          {label}
+          {type}
         </span>
       </Link>
     );
