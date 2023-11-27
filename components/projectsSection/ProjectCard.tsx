@@ -8,6 +8,7 @@ import { motion, Variants } from "framer-motion";
 import { Project } from "@/constants";
 
 import ProjectCardButton from "./ProjectCardButton";
+import CollapsibleText from "./CollapsibleText"
 
 type ProjectCardProps = Project;
 
@@ -21,7 +22,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   live_site_link,
 }) => {
   return (
-    <motion.div className="grid w-full flex-1 grid-cols-2 gap-6  rounded-2xl bg-teal-400/10 p-5 lg:flex lg:w-[360px] lg:flex-col">
+    <motion.div className="lg:grid w-full flex-1 lg:grid-cols-2 gap-6  rounded-2xl bg-teal-400/10 p-5 flex lg:w-[360px] flex-col">
+
+      {/* Video of project */}
       <div className="relative  w-full ">
         <video
           preload="auto"
@@ -56,7 +59,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* description */}
         <div className="mt-5">
           <h3 className="text-[24px] font-bold text-white">{name}</h3>
-          <p className="text-white/70 mt-2 text-[14px] ">{description}</p>
+          {/* <p className="text-white/70 mt-2 text-[14px] ">{description}</p> */}
+          <CollapsibleText text={description} size="small" />
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
