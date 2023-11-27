@@ -1,16 +1,19 @@
-import Link from "next/link"
-import React from "react"
+import Link from "next/link";
+import React from "react";
 
 type ProjectTitleLinkProps = {
-    href: string;
-    projectTitle: string;
-}
+  href: string;
+  projectTitle: string;
+};
 
-const ProjectTitleLink: React.FC<ProjectTitleLinkProps> = ({href, projectTitle}) => {
-    return (
-      <h3 className="text-[24px] font-bold text-white">
-        <Link
-        className="group/link inline-flex items-baseline font-semibold leading-tight text-slate-200  hover:text-teal-300 focus-visible:text-teal-300"
+const ProjectTitleLink: React.FC<ProjectTitleLinkProps> = ({
+  href,
+  projectTitle,
+}) => {
+  return (
+    <h3 className="text-[24px] font-bold text-white">
+      <Link
+        className="group/link inline-flex w-max items-baseline font-semibold leading-tight text-teal-300 focus-visible:text-teal-300 sm:text-slate-200 sm:hover:text-teal-300"
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -18,12 +21,12 @@ const ProjectTitleLink: React.FC<ProjectTitleLinkProps> = ({href, projectTitle})
       >
         <span>
           {projectTitle}
-          <span className="ml-1 inline-block relative text-[24px]">
+          <span className="relative ml-1 inline-block -translate-y-0.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="mx-1 inline-block h-full w-full shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none"
+              className="mx-1 inline-block h-6 w-6 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none"
               aria-hidden="true"
             >
               <path
@@ -35,8 +38,8 @@ const ProjectTitleLink: React.FC<ProjectTitleLinkProps> = ({href, projectTitle})
           </span>
         </span>
       </Link>
-         </h3> 
-    );
-  };
+    </h3>
+  );
+};
 
-  export default ProjectTitleLink;
+export default ProjectTitleLink;
