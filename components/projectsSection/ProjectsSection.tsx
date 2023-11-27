@@ -2,7 +2,10 @@ import React from "react";
 import FadeInContent from "../FadeInContent";
 import Image from "next/image";
 
+import { projects, Project } from "@/constants";
 import projectsImg from "../../public/images/icons/projects.svg";
+
+import ProjectCard from "./ProjectCard";
 
 const ProjectsSection = () => {
   return (
@@ -17,6 +20,15 @@ const ProjectsSection = () => {
             projects
           </h2>
         </header>
+      </FadeInContent>
+
+      {/* Content */}
+      <FadeInContent margin="0px">
+        <div className="mt-10 grid grid-cols-1 gap-4 lg:flex lg:flex-wrap">
+          {projects.map((project: Project, index: number) => (
+            <ProjectCard key={index} {...project} />
+          ))}
+        </div>
       </FadeInContent>
     </div>
   );

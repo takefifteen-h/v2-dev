@@ -1,17 +1,19 @@
-// @ts-ignore
-import serengeti_mp4 from "../public/videos/project-walkthoughs/mp4/serengeti_walkthrough.mp4";
-// @ts-ignore
-import crispycanvas_mp4 from "../public/videos/project-walkthoughs/mp4/crispycanvas_walkthrough.mp4";
-// @ts-ignore
-import globetracer_mp4 from "../public/videos/project-walkthoughs/mp4/globetracer_walkthrough.mp4";
-// @ts-ignore
-import serengeti_webm from "../public/videos/project-walkthoughs/webm/serengeti_walkthrough.webm";
-// @ts-ignore
-import crispycanvas_webm from "../public/videos/project-walkthoughs/webm/crispycanvas_walkthrough.webm";
-// @ts-ignore
-import globetracer_webm from "../public/videos/project-walkthoughs/webm/globetracer_walkthrough.webm";
+// save to variables instead of importing
+// to avoid webpack error
+const serengeti_mp4 =
+  "videos/project-walkthoughs/mp4/serengeti_walkthrough.mp4";
+const crispycanvas_mp4 =
+  "videos/project-walkthoughs/mp4/crispycanvas_walkthrough.mp4";
+const globetracer_mp4 =
+  "videos/project-walkthoughs/mp4/globetracer_walkthrough.mp4";
+const serengeti_webm =
+  "videos/project-walkthoughs/webm/serengeti_walkthrough.webm";
+const crispycanvas_webm =
+  "videos/project-walkthoughs/webm/crispycanvas_walkthrough.webm";
+const globetracer_webm =
+  "videos/project-walkthoughs/webm/globetracer_walkthrough.webm";
 
-type Project = {
+export type Project = {
   name: string;
   description: string;
   tags: Array<{ name: string }>;
