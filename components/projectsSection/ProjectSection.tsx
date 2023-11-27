@@ -7,7 +7,7 @@ import projectsImg from "../../public/images/icons/projects.svg";
 
 import ProjectCard from "./ProjectCard";
 
-const ProjectsSection = () => {
+const ProjectSection = () => {
   return (
     <div className="master-container py-[64px] lg:py-[72px]">
       {/* Header */}
@@ -19,29 +19,28 @@ const ProjectsSection = () => {
           <h2 className="w-fit text-5xl font-semibold uppercase md:text-6xl lg:text-7xl xl:text-8xl">
             projects
           </h2>
-        </header> 
+        </header>
       </FadeInContent>
 
       {/* Content */}
       <FadeInContent margin="0px">
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {projects.map((project: Project, index: number) => (
-              <div 
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project: Project, index: number) => (
+            <div
               key={index}
-               className={
-                ` ${index === 0 || index === 3  ? 'sm:col-span-2' : 'sm:col-span-1'}
+              className={`box g1 rounded-lg p-1 ${
+                index === 0 ? "sm:col-span-full" : "sm:col-span-1"
+              }
+              ${index === 3 && "sm:col-span-full xl:order-2 xl:col-span-1"}
                 `}
-               >
-                <ProjectCard 
-                {...project}
-                 spanFullContainer={index === 0 || index === 3  } 
-                 />
-              </div>
-            ))}
+            >
+              <ProjectCard {...project} index={index + 1} />
+            </div>
+          ))}
         </div>
       </FadeInContent>
     </div>
   );
 };
 
-export default ProjectsSection;
+export default ProjectSection;
