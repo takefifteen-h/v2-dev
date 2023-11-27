@@ -24,13 +24,21 @@ const ProjectsSection = () => {
 
       {/* Content */}
       <FadeInContent margin="0px">
-      <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
-  {projects.map((project: Project, index: number) => (
-    <div key={index} className={`lg:col-span-1 xl:col-span-1 ${index === projects.length - 1 && 'lg:col-span-2 xl:col-span-3'}`}>
-      <ProjectCard {...project} />
-    </div>
-  ))}
-</div>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {projects.map((project: Project, index: number) => (
+              <div 
+              key={index}
+               className={
+                ` ${index === 0 || index === 3  ? 'sm:col-span-2' : 'sm:col-span-1'}
+                `}
+               >
+                <ProjectCard 
+                {...project}
+                 spanFullContainer={index === 0 || index === 3  } 
+                 />
+              </div>
+            ))}
+        </div>
       </FadeInContent>
     </div>
   );

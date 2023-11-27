@@ -9,30 +9,41 @@ import { Project } from "@/constants";
 
 import ProjectCardButton from "./ProjectCardButton";
 import CollapsibleText from "./CollapsibleText"
+import ProjectTitleLink from "./ProjectTitleLink";
 
-type ProjectCardProps = Project;
+type ProjectCardProps = Project & {
+  spanFullContainer: boolean,
+};
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
-  name,
+  projectTitle,
   description,
   mp4,
   webm,
   source_code_link,
   tags,
   live_site_link,
+  github_repo_link,
+  spanFullContainer
 }) => {
+  const defaultContainerClasses = "border border-gray-200 p-5 w-full flex-1 gap-6 flex flex-col" 
+  const fullSpanClasses = "sm:grid sm:grid-cols-12"
+  const halfSpanClasses = ""
+
   return (
-    <motion.div className="sm:grid w-full flex-1 sm:grid-cols-12 gap-6  rounded-2xl bg-teal-400/10 p-5 flex flex-col">
+    <motion.div className={`${defaultContainerClasses} 
+    ${spanFullContainer ? fullSpanClasses : halfSpanClasses}
+    `}>
 
       {/* Video of project */}
-      <div className="relative w-full sm:col-span-4">
+      <div className="relative overflow-hidden sm:col-span-5 aspect-video">
         <video
           preload="auto"
           autoPlay
           loop
           muted
           playsInline
-          className="aspect-square rounded-none object-cover lg:aspect-video"
+          className="rounded-none object-cover w-full h-full"
         >
           <source src={webm} type="video/webm" />
           <source src={mp4} type="video/mp4" />
@@ -55,12 +66,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* description and btns*/}
-      <div className=" sm:col-span-8">
+      <div className=" sm:col-span-7">
         {/* description */}
-        <div className="mt-5">
-          <h3 className="text-[24px] font-bold text-white">{name}</h3>
-          {/* <p className="text-white/70 mt-2 text-[14px] ">{description}</p> */}
-          <CollapsibleText text={description} size="small" />
+        <div className="mt-5 flex flex-col gap-y-2">
+          {/* <h3 className="text-[24px] font-bold text-white">{projectTitle}</h3> */}
+          <ProjectTitleLink href={github_repo_link} projectTitle={projectTitle}/>
+          <CollapsibleText text={description} size="small" intialOverviewLength={80} />
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -70,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* btns to view live site and github code */}
-        <div className="mt-4 flex gap-3">
+        <div className="mt-4 flex gap-3 sm:hidden">
           <ProjectCardButton
             label="Source code"
             type="code"

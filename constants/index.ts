@@ -14,18 +14,19 @@ const globetracer_webm =
   "videos/project-walkthoughs/webm/globetracer_walkthrough.webm";
 
 export type Project = {
-  name: string;
+  projectTitle: string;
   description: string;
   tags: Array<{ name: string }>;
   mp4: any;
   webm: any;
   source_code_link: string;
   live_site_link?: string;
+  github_repo_link: string;
 };
 
 export const projects: Project[] = [
   {
-    name: "Serengeti Sky Lodges",
+    projectTitle: "Serengeti Sky Lodges",
     description:
       "A Next.js-powered website offering luxurious escapes amidst untamed wilderness, secure authentication with Supabase, and seamless CRUD functionality for a truly enchanting user experience. Adventure awaits! 🏞️🛂",
     tags: [
@@ -46,9 +47,10 @@ export const projects: Project[] = [
     webm: serengeti_webm,
     source_code_link: "https://github.com/PresidentIsmail/Serengeti-Sky-Lodges",
     live_site_link: "https://serengeti-sky-lodges.vercel.app/",
+    github_repo_link: "https://github.com/PresidentIsmail"
   },
   {
-    name: "Crispy Canvas",
+    projectTitle: "Crispy Canvas",
     description:
       "A React ordering application that lets you order your favourite pizzas while effortlessly managing orders and accessing order history. With my expertise, I crafted a seamless user experience that tantalizes taste buds and showcases my skills in front-end development. 🍕🎨",
     tags: [
@@ -66,9 +68,10 @@ export const projects: Project[] = [
     webm: crispycanvas_webm,
     source_code_link: "https://github.com/PresidentIsmail/Crispy-Canvas",
     live_site_link: "https://crispy-canvas.netlify.app/",
+    github_repo_link: "https://github.com/PresidentIsmail"
   },
   {
-    name: "Globe Tracer",
+    projectTitle: "Globe Tracer",
     description:
       "Globe Tracer is a web application that allows users to track all the places they have traveled to around the world. With an interactive map and a user-friendly interface, users can easily record their travel experiences and view them at any time.",
     tags: [
@@ -88,5 +91,6 @@ export const projects: Project[] = [
     mp4: globetracer_mp4,
     webm: globetracer_webm,
     source_code_link: "https://github.com/PresidentIsmail/Globe-Tracer",
+    github_repo_link: "https://github.com/PresidentIsmail"
   },
 ];
