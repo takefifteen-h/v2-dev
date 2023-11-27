@@ -19,16 +19,18 @@ const ProjectsSection = () => {
           <h2 className="w-fit text-5xl font-semibold uppercase md:text-6xl lg:text-7xl xl:text-8xl">
             projects
           </h2>
-        </header>
+        </header> 
       </FadeInContent>
 
       {/* Content */}
       <FadeInContent margin="0px">
-        <div className="mt-10 grid grid-cols-1 gap-4 lg:flex lg:flex-wrap">
-          {projects.map((project: Project, index: number) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </div>
+      <div className="mt-10 grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
+  {projects.map((project: Project, index: number) => (
+    <div key={index} className={`lg:col-span-1 xl:col-span-1 ${index === projects.length - 1 && 'lg:col-span-2 xl:col-span-3'}`}>
+      <ProjectCard {...project} />
+    </div>
+  ))}
+</div>
       </FadeInContent>
     </div>
   );

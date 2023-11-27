@@ -22,10 +22,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   live_site_link,
 }) => {
   return (
-    <motion.div className="lg:grid w-full flex-1 lg:grid-cols-2 gap-6  rounded-2xl bg-teal-400/10 p-5 flex lg:w-[360px] flex-col">
+    <motion.div className="sm:grid w-full flex-1 sm:grid-cols-12 gap-6  rounded-2xl bg-teal-400/10 p-5 flex flex-col">
 
       {/* Video of project */}
-      <div className="relative  w-full ">
+      <div className="relative w-full sm:col-span-4">
         <video
           preload="auto"
           autoPlay
@@ -55,7 +55,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
 
       {/* description and btns*/}
-      <div>
+      <div className=" sm:col-span-8">
         {/* description */}
         <div className="mt-5">
           <h3 className="text-[24px] font-bold text-white">{name}</h3>
