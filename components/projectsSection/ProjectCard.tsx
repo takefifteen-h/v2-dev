@@ -8,11 +8,11 @@ import { motion, Variants } from "framer-motion";
 import { Project } from "@/constants";
 
 import ProjectCardButton from "./ProjectCardButton";
-import CollapsibleText from "./CollapsibleText"
+import CollapsibleText from "./CollapsibleText";
 import ProjectTitleLink from "./ProjectTitleLink";
 
 type ProjectCardProps = Project & {
-  spanFullContainer: boolean,
+  index: number;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -23,29 +23,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   source_code_link,
   tags,
   live_site_link,
-  github_repo_link,
-  spanFullContainer
+  index,
 }) => {
-  const defaultContainerClasses = "border border-gray-200 p-5 w-full flex-1 gap-6 flex flex-col" 
-  const fullSpanClasses = "sm:grid sm:grid-cols-12"
-  const halfSpanClasses = ""
+  const defaultContainerClasses =
+    "bg-[rgb(0,0,0)]  p-5 w-full h-full flex-1 gap-6 flex flex-col";
+  const halfSpanClasses = "";
+
+  const firstProjectClasses = "sm:grid sm:grid-cols-12";
+  const lastProjectClasses = "sm:grid sm:grid-cols-12 xl:flex xl:flex-col";
 
   return (
-    <motion.div className={`${defaultContainerClasses} 
-    ${spanFullContainer ? fullSpanClasses : halfSpanClasses}
-    `}>
-
+    <motion.div
+      className={`${defaultContainerClasses} 
+    ${index === 1 && firstProjectClasses}
+    ${index === 4 ? lastProjectClasses : halfSpanClasses}
+    `}
+    >
       {/* Video of project */}
-      <div className="relative overflow-hidden sm:col-span-5 aspect-video">
+      <div className="relative aspect-video overflow-hidden sm:col-span-5">
         <video
           preload="auto"
           autoPlay
           loop
           muted
           playsInline
-          className="rounded-none object-cover w-full h-full"
+          className="h-full w-full rounded-none object-cover"
         >
-          <source src={webm} type="video/webm" />
+          {webm && <source src={webm} type="video/webm" />}
           <source src={mp4} type="video/mp4" />
         </video>
 
@@ -70,8 +74,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* description */}
         <div className="mt-5 flex flex-col gap-y-2">
           {/* <h3 className="text-[24px] font-bold text-white">{projectTitle}</h3> */}
-          <ProjectTitleLink href={github_repo_link} projectTitle={projectTitle}/>
-          <CollapsibleText text={description} size="small" intialOverviewLength={80} />
+          <ProjectTitleLink
+            href={source_code_link}
+            projectTitle={projectTitle}
+          />
+          <CollapsibleText
+            text={description}
+            size="small"
+            intialOverviewLength={80}
+          />
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -82,17 +93,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {/* btns to view live site and github code */}
         <div className="mt-4 flex gap-3 sm:hidden">
-          <ProjectCardButton
-            label="Source code"
-            type="code"
-            link={source_code_link}
-          />
+          <ProjectCardButton type="code" link={source_code_link} />
           {live_site_link && (
-            <ProjectCardButton
-              label="Live site"
-              type="live"
-              link={live_site_link}
-            />
+            <ProjectCardButton type="live" link={live_site_link} />
           )}
         </div>
       </div>
