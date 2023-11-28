@@ -18,8 +18,9 @@ export default function Home() {
         <FadeInSection
           id="about"
           aria-label="about"
-          startColor="#fff9f2"
-          endColor="rgb(14, 14, 14)"
+          textColor="text-white"
+          initialColor="#fff9f2"
+          finalColor="rgb(14, 14, 14)"
         >
           <AboutSection />
         </FadeInSection>
@@ -28,8 +29,9 @@ export default function Home() {
         <FadeInSection
           id="services"
           aria-label="services"
-          startColor="rgb(14, 14, 14)"
-          endColor="#fff9f2"
+          initialColor="rgb(14, 14, 14)"
+          finalColor="#fff9f2"
+          textColor="text-[#5d3b14]"
         >
           <ServiceSection />
         </FadeInSection>
@@ -38,8 +40,9 @@ export default function Home() {
         <FadeInSection
           id="projects"
           aria-label="projects"
-          startColor="#fff9f2"
-          endColor="rgb(14, 14, 14)"
+          initialColor="#fff9f2"
+          finalColor="rgb(14, 14, 14)"
+          textColor="text-white"
         >
           <ProjectSection />
         </FadeInSection>
@@ -48,8 +51,9 @@ export default function Home() {
         <FadeInSection
           id="contact"
           aria-label="contact"
-          startColor="rgb(14, 14, 14)"
-          endColor="#fff9f2"
+          initialColor="rgb(14, 14, 14)"
+          finalColor="#ffd400"
+          textColor="text-black"
         >
           <ContactSection />
         </FadeInSection>
