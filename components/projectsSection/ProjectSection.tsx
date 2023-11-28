@@ -1,10 +1,11 @@
 import React from "react";
-import FadeInContent from "../FadeInContent";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import { projects, Project } from "@/constants";
-import projectsImg from "../../public/images/icons/projects.svg";
 
+import FadeInContent from "../FadeInContent";
+import projectsImg from "../../public/images/icons/projects.svg";
 import ProjectCard from "./ProjectCard";
 
 const ProjectSection = () => {
@@ -23,22 +24,22 @@ const ProjectSection = () => {
       </FadeInContent>
 
       {/* Content */}
-      <FadeInContent margin="0px">
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project: Project, index: number) => (
-            <div
-              key={index}
-              className={`box g1 rounded-lg p-1 ${
-                index === 0 ? "sm:col-span-full" : "sm:col-span-1"
-              }
-              ${index === 3 && "sm:col-span-full xl:order-2 xl:col-span-1"}
-                `}
-            >
-              <ProjectCard {...project} index={index + 1} />
-            </div>
-          ))}
-        </div>
-      </FadeInContent>
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        {projects.map((project: Project, index: number) => (
+          <FadeInContent
+            key={index}
+            margin="0px"
+            delay={index * 0.2}
+            className={`box g1 rounded-lg p-1 ${
+              index === 0 ? "sm:col-span-full" : "sm:col-span-1"
+            }
+          ${index === 3 && "sm:col-span-full xl:order-2 xl:col-span-1"}
+          `}
+          >
+            <ProjectCard {...project} index={index + 1} />
+          </FadeInContent>
+        ))}
+      </div>
     </div>
   );
 };
