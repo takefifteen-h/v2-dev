@@ -1,6 +1,5 @@
 import React from "react";
 
-import { PiHouse as Home } from "react-icons/pi";
 import { IoPersonOutline as About } from "react-icons/io5";
 import {
   LuTarget as Target,
@@ -9,21 +8,30 @@ import {
 } from "react-icons/lu";
 import { PiHandshake } from "react-icons/pi";
 import NavLink from "./NavLink";
+import SlideInContent from "../SlideInContent";
 
 const DesktopMenu = () => {
   return (
     <ul className="flex items-center justify-between space-x-6">
       <li>
-        <NavLink href="#about" icon={<About />} text="About" />
+        <SlideInContent>
+          <NavLink href="#about" icon={<About />} text="About" />
+        </SlideInContent>
       </li>
       <li>
-        <NavLink href="#services" icon={<PiHandshake />} text="Services" />
+        <SlideInContent delay={0.25}>
+          <NavLink href="#services" icon={<PiHandshake />} text="Services" />
+        </SlideInContent>
       </li>
       <li>
-        <NavLink href="#projects" icon={<Target />} text="Projects" />
+        <SlideInContent delay={0.5}>
+          <NavLink href="#projects" icon={<Target />} text="Projects" />
+        </SlideInContent>
       </li>
       <li>
-        <NavLink href="#contact" icon={<Phone />} text="Contact" />
+        <SlideInContent delay={0.75}>
+          <NavLink href="#contact" icon={<Phone />} text="Contact" />
+        </SlideInContent>
       </li>
     </ul>
   );
