@@ -6,13 +6,13 @@ import ProjectSection from "@/components/projectsSection/ProjectSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden max-w-full">
       <HeroSection />
 
       <FadeInSection
         id="about"
         aria-label="about"
-        startColor="rgb(255, 255, 255)"
+        startColor="#fff9f2"
         endColor="rgb(14, 14, 14)"
       >
         <AboutSection />
@@ -22,7 +22,7 @@ export default function Home() {
         id="services"
         aria-label="services"
         startColor="rgb(14, 14, 14)"
-        endColor="rgb(255, 255, 255)"
+        endColor="#fff9f2"
       >
         <ServiceSection />
       </FadeInSection>
@@ -30,7 +30,7 @@ export default function Home() {
       <FadeInSection
         id="projects"
         aria-label="projects"
-        startColor="rgb(255, 255, 255)"
+        startColor="#fff9f2"
         endColor="rgb(14, 14, 14)"
       >
         <ProjectSection />

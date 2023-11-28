@@ -7,7 +7,7 @@ type id = "about" | "services" | "projects" | "contact";
 
 type DarkToLightProps = {
   startColor: "rgb(14, 14, 14)";
-  endColor: "rgb(255, 255, 255)";
+  endColor: "#fff9f2";
   children: React.ReactNode;
   delay?: number;
   className?: string;
@@ -15,7 +15,7 @@ type DarkToLightProps = {
 };
 
 type LightToDarkProps = {
-  startColor: "rgb(255, 255, 255)";
+  startColor: "#fff9f2";
   endColor: "rgb(14, 14, 14)";
   children: React.ReactNode;
   delay?: number;
@@ -61,7 +61,7 @@ const FadeInSection: React.FC<Props> = ({
         margin: "-100px",
       }}
       className={`${
-        startColor === "rgb(14, 14, 14)" ? "text-black" : "text-white"
+        startColor === "rgb(14, 14, 14)" ? "text-[#5d3b14]" : "text-white"
       }  ${className}}`}
       {...props}
     >

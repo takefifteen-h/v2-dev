@@ -4,26 +4,30 @@ import Image from "next/image";
 import { projects, Project } from "@/constants";
 
 import SlideInContent from "../SlideInContent";
+import FadeInContent from "../FadeInContent";
 import projectsImg from "../../public/images/icons/projects.svg";
 import ProjectCard from "./ProjectCard";
 
 const ProjectSection = () => {
   return (
-    <div className="master-container py-[64px] lg:py-[72px]">
+    <div className="master-container py-[64px] lg:py-[72px] flex flex-col gap-y-8 md:gap-y-16 lg:gap-y-24">
       {/* Header */}
-      <SlideInContent>
+      <FadeInContent >
         <header className="flex w-full select-none items-center justify-start gap-x-2">
+          {/* icon */}
           <div className="relative h-[30px] w-[30px] md:h-[48px] md:w-[48px] lg:h-[56px] lg:w-[56px]">
             <Image src={projectsImg} alt="projects icon" fill />
           </div>
+
+          {/* heading */}
           <h2 className="w-fit text-5xl font-semibold uppercase md:text-6xl lg:text-7xl xl:text-8xl">
             projects
           </h2>
         </header>
-      </SlideInContent>
+      </FadeInContent>
 
       {/* Content */}
-      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {projects.map((project: Project, index: number) => (
           <SlideInContent
             key={index}

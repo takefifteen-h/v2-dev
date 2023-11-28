@@ -1,16 +1,16 @@
-<svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_55_65)">
-<mask id="mask0_55_65" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="21">
-<path d="M0 0H24V20.8069H0V0Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_55_65)">
-<path d="M21.6846 13.2265C20.4979 13.4589 19.2914 13.5756 18.0822 13.5749C10.3342 13.5749 3.68611 8.83838 0.846592 2.0882L0.819811 2.02393" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.0292 12.1923C11.4709 5.67587 16.6858 0.477345 23.1856 0.103027C23.6481 1.63068 23.897 3.25259 23.897 4.9328C23.897 12.3135 19.094 18.5661 12.4598 20.7039C11.5906 20.5853 10.7341 20.3868 9.90139 20.1108C2.42647 17.6376 -1.6388 9.54018 0.820945 2.02447C2.28134 1.30128 3.92467 0.895542 5.66215 0.895542C8.99979 0.895542 11.9895 2.39374 14.0016 4.75779" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-</g>
-<defs>
-<clipPath id="clip0_55_65">
-<rect width="24" height="20.8069" fill="white"/>
-</clipPath>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="21" viewBox="0 0 24 21" fill="none">
+  <g clip-path="url(#clip0_55_65)">
+    <mask id="mask0_55_65" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="21">
+      <path d="M0 0H24V20.8069H0V0Z" fill="white"/>
+    </mask>
+    <g mask="url(#mask0_55_65)">
+      <path d="M21.6845 13.2265C20.4979 13.4589 19.2914 13.5756 18.0822 13.5749C10.3342 13.5749 3.68609 8.83838 0.846575 2.0882L0.819794 2.02393" stroke="#5D3B14" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M11.0292 12.1923C11.4709 5.67587 16.6858 0.477345 23.1856 0.103027C23.6481 1.63068 23.897 3.25259 23.897 4.9328C23.897 12.3135 19.094 18.5661 12.4598 20.7039C11.5906 20.5853 10.7341 20.3868 9.90138 20.1108C2.42647 17.6376 -1.6388 9.54018 0.820939 2.02447C2.28133 1.30128 3.92466 0.895542 5.66214 0.895542C8.99979 0.895542 11.9895 2.39374 14.0016 4.75779" stroke="#5D3B14" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0_55_65">
+      <rect width="24" height="20.8069" fill="white"/>
+    </clipPath>
+  </defs>
 </svg>
