@@ -9,6 +9,8 @@ import Link from "next/link";
 import { useWindowWidth } from "@/hooks/useWindowWidth";
 
 const DesktopMenu = dynamic(() => import("./DesktopMenu"), { ssr: false });
+const NavbarButton = dynamic(() => import("./NavbarButton"), { ssr: false });
+import FadeInContent from "../FadeInContent";
 
 const navbarVariants = {
   hidden: {
@@ -46,7 +48,7 @@ const Navbar = () => {
     <motion.nav
       variants={navbarVariants}
       animate={isScrolled ? "hidden" : "visible"}
-      className="fixed top-0 z-40 flex h-navbar-mobile w-full items-center justify-center bg-[#121212d9] px-5 text-white md:h-navbar-desktop  md:justify-between"
+      className="fixed top-0 z-40 flex h-navbar-mobile w-full items-center  justify-between bg-[#121212d9] px-5 text-white  md:h-navbar-desktop"
       style={{ backdropFilter: "blur(10px) saturate(180%)" }}
     >
       <Link href="/">
@@ -60,7 +62,13 @@ const Navbar = () => {
         </div>
       </Link>
       {/* displaty desktop menu if the window width is greater than 768px */}
-      {windowWidth && windowWidth > MOBILE_WIDTH ? <DesktopMenu /> : null}
+      {windowWidth && windowWidth > MOBILE_WIDTH ? (
+        <DesktopMenu />
+      ) : (
+        <FadeInContent delay={0.25}>
+          <NavbarButton label="Get In Touch" href="#contact" />
+        </FadeInContent>
+      )}
     </motion.nav>
   );
 };
