@@ -11,7 +11,7 @@ const ProjectSection = () => {
   return (
     <div className="master-container py-[64px] lg:py-[72px]">
       {/* Header */}
-      <FadeInContent margin="0px">
+      <FadeInContent>
         <header className="flex w-full select-none items-center justify-start gap-x-2">
           <div className="relative h-[30px] w-[30px] md:h-[48px] md:w-[48px] lg:h-[56px] lg:w-[56px]">
             <Image src={projectsImg} alt="projects icon" fill />
@@ -27,7 +27,6 @@ const ProjectSection = () => {
         {projects.map((project: Project, index: number) => (
           <FadeInContent
             key={index}
-            margin="0px"
             delay={index * 0.2}
             className={`box g1 rounded-lg p-1 ${
               index === 0 ? "sm:col-span-full" : "sm:col-span-1"

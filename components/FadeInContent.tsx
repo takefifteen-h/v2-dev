@@ -24,7 +24,7 @@ const containerVariants: Variants = {
 const FadeInContent: React.FC<Props> = ({
   children,
   delay = 0,
-  margin = "-100px",
+  margin = "0px",
   className,
 }) => {
   return (

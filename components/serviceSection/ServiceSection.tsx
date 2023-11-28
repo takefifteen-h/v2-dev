@@ -9,7 +9,7 @@ const ServiceSection = () => {
   return (
     <div className="master-container  py-[64px] lg:py-[72px]">
       {/* Header */}
-      <FadeInContent margin="0px">
+      <FadeInContent>
         <header className="flex w-full select-none items-center justify-start gap-x-2">
           <div className="relative h-[30px] w-[30px] md:h-[48px] md:w-[48px] lg:h-[56px] lg:w-[56px]">
             <Image src={serviceImg} alt="services icon" fill />

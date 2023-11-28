@@ -22,14 +22,14 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
           </h3>
         </FadeInContent>
 
-        <FadeInContent delay={0.5} margin="0px">
+        <FadeInContent delay={0.5}>
           <p className="text-body-1 max-w-md  xl:max-w-2xl 2xl:text-3xl">
             {paragraph}
           </p>
         </FadeInContent>
 
         {/* line on sm screens */}
-        <FadeInContent delay={0.5} margin="0px" className="flex md:hidden">
+        <FadeInContent delay={0.5} className="flex md:hidden">
           <hr className="bg-accent-100 mt-4 h-1 w-full opacity-50" />
         </FadeInContent>
       </div>
@@ -37,7 +37,7 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
       {/* Content */}
       <div className=" text-secondary-500  select-none leading-[2.3rem] md:leading-[2.5rem] lg:leading-[3.4rem]">
         {items.map((item, index) => (
-          <FadeInContent key={index} delay={index * 0.25 + 0.5} margin="0px">
+          <FadeInContent key={index} delay={index * 0.25 + 0.5}>
             <p className="font-general text-special font-extrabold 2xl:text-7xl ">
               {item}
             </p>
