@@ -7,6 +7,7 @@ type Props = {
   children: React.ReactNode;
   delay?: number;
   margin?: string;
+  className?: string;
 };
 
 const containerVariants: Variants = {
@@ -24,6 +25,7 @@ const FadeInContent: React.FC<Props> = ({
   children,
   delay = 0,
   margin = "-100px",
+  className,
 }) => {
   return (
     <motion.div
@@ -38,6 +40,7 @@ const FadeInContent: React.FC<Props> = ({
         once: true,
         margin: margin,
       }}
+      className={className}
     >
       {children}
     </motion.div>
