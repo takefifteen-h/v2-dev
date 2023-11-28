@@ -41,8 +41,10 @@ const GreetingAnimation: React.FC<Props> = ({ children }) => {
       }
     };
 
-    const delay =
-      greetingIndex === 0 || greetingIndex === greetings.length - 1 ? 800 : 150;
+    let delay: number;
+    if (greetingIndex === 0) delay = 1000;
+    else if (greetingIndex === greetings.length - 1) delay = 800;
+    else delay = 150;
 
     const timeoutId = setTimeout(displayGreeting, delay); // Display next greeting after delay
 
