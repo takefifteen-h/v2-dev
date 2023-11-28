@@ -28,7 +28,7 @@ const ProjectSection = () => {
           <FadeInContent
             key={index}
             delay={index * 0.2}
-            className={`box g1 rounded-lg p-1 ${
+            className={`box g${index + 1} rounded-lg p-0.5 ${
               index === 0 ? "sm:col-span-full" : "sm:col-span-1"
             }
           ${index === 3 && "sm:col-span-full xl:order-2 xl:col-span-1"}

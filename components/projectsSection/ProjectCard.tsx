@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   index,
 }) => {
   const defaultContainerClasses =
-    "bg-[rgb(0,0,0)]  p-5 w-full h-full flex-1 gap-6 flex flex-col";
+    "bg-[rgb(14,14,14)] rounded-lg p-5 w-full h-full flex-1 gap-6 flex flex-col";
   const halfSpanClasses = "";
 
   const firstProjectClasses = "sm:grid sm:grid-cols-12";
@@ -58,11 +58,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className=" sm:col-span-7">
         {/* description */}
         <div className="mt-5 flex flex-col gap-y-2">
-          {/* <h3 className="text-[24px] font-bold text-white">{projectTitle}</h3> */}
           <ProjectTitleLink
             href={source_code_link}
             projectTitle={projectTitle}
           />
+          <div className="mb-2 flex flex-wrap gap-2">
+            {tags.map((tag, index) => (
+              <Badge key={index} label={tag.name} />
+            ))}
+          </div>
           <CollapsibleText
             text={description}
             size="small"
@@ -70,14 +74,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag, index) => (
-            <Badge key={index} label={tag.name} />
-          ))}
-        </div>
-
         {/* btns to view live site and github code */}
-        <div className="mt-4 flex gap-3 sm:hidden">
+        <div className="mt-4 flex gap-3">
           <ProjectCardButton type="code" link={source_code_link} />
           {live_site_link && (
             <ProjectCardButton type="live" link={live_site_link} />
