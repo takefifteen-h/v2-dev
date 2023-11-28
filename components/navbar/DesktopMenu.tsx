@@ -8,30 +8,30 @@ import {
 } from "react-icons/lu";
 import { PiHandshake } from "react-icons/pi";
 import NavLink from "./NavLink";
-import SlideInContent from "../SlideInContent";
+import FadeInContent from "../FadeInContent";
 
 const DesktopMenu = () => {
   return (
     <ul className="flex items-center justify-between space-x-6">
       <li>
-        <SlideInContent>
+        <FadeInContent>
           <NavLink href="#about" icon={<About />} text="About" />
-        </SlideInContent>
+        </FadeInContent>
       </li>
       <li>
-        <SlideInContent delay={0.25}>
+        <FadeInContent delay={0.25}>
           <NavLink href="#services" icon={<PiHandshake />} text="Services" />
-        </SlideInContent>
+        </FadeInContent>
       </li>
       <li>
-        <SlideInContent delay={0.5}>
+        <FadeInContent delay={0.5}>
           <NavLink href="#projects" icon={<Target />} text="Projects" />
-        </SlideInContent>
+        </FadeInContent>
       </li>
       <li>
-        <SlideInContent delay={0.75}>
+        <FadeInContent delay={0.75}>
           <NavLink href="#contact" icon={<Phone />} text="Contact" />
-        </SlideInContent>
+        </FadeInContent>
       </li>
     </ul>
   );
