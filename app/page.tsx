@@ -2,7 +2,7 @@ import HeroSection from "@/components/heroSection/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServiceSection from "@/components/serviceSection/ServiceSection";
 import FadeInSection from "@/components/FadeInSection";
-import ProjectsSection from "@/components/projectsSection/ProjectsSection";
+import ProjectSection from "@/components/projectsSection/ProjectSection";
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
         startColor="rgb(255, 255, 255)"
         endColor="rgb(14, 14, 14)"
       >
-        <ProjectsSection />
+        <ProjectSection />
       </FadeInSection>
     </main>
   );
