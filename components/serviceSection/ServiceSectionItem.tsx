@@ -1,5 +1,5 @@
 import React from "react";
-import FadeInContent from "../FadeInContent";
+import SlideInContent from "../SlideInContent";
 
 interface ServiceSectionItemProps {
   header: string;
@@ -16,32 +16,32 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
     <div className=" mt-8 grid grid-cols-1 gap-y-5 md:mt-16 md:grid-cols-2 md:gap-24 lg:mt-24">
       <div className="flex flex-col gap-y-4">
         {/* Header */}
-        <FadeInContent delay={0}>
+        <SlideInContent delay={0}>
           <h3 className="text-heading-3 font-medium capitalize leading-tight 2xl:text-7xl">
             {header}
           </h3>
-        </FadeInContent>
+        </SlideInContent>
 
-        <FadeInContent delay={0.5}>
+        <SlideInContent delay={0.5}>
           <p className="text-body-1 max-w-md  xl:max-w-2xl 2xl:text-3xl">
             {paragraph}
           </p>
-        </FadeInContent>
+        </SlideInContent>
 
         {/* line on sm screens */}
-        <FadeInContent delay={0.5} className="flex md:hidden">
+        <SlideInContent delay={0.5} className="flex md:hidden">
           <hr className="bg-accent-100 mt-4 h-1 w-full opacity-50" />
-        </FadeInContent>
+        </SlideInContent>
       </div>
 
       {/* Content */}
       <div className=" text-secondary-500  select-none leading-[2.3rem] md:leading-[2.5rem] lg:leading-[3.4rem]">
         {items.map((item, index) => (
-          <FadeInContent key={index} delay={index * 0.25 + 0.5}>
+          <SlideInContent key={index} delay={index * 0.25 + 0.5}>
             <p className="font-general text-special font-extrabold 2xl:text-7xl ">
               {item}
             </p>
-          </FadeInContent>
+          </SlideInContent>
         ))}
       </div>
     </div>

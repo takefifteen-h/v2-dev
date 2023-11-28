@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { projects, Project } from "@/constants";
 
-import FadeInContent from "../FadeInContent";
+import SlideInContent from "../SlideInContent";
 import projectsImg from "../../public/images/icons/projects.svg";
 import ProjectCard from "./ProjectCard";
 
@@ -11,7 +11,7 @@ const ProjectSection = () => {
   return (
     <div className="master-container py-[64px] lg:py-[72px]">
       {/* Header */}
-      <FadeInContent>
+      <SlideInContent>
         <header className="flex w-full select-none items-center justify-start gap-x-2">
           <div className="relative h-[30px] w-[30px] md:h-[48px] md:w-[48px] lg:h-[56px] lg:w-[56px]">
             <Image src={projectsImg} alt="projects icon" fill />
@@ -20,12 +20,12 @@ const ProjectSection = () => {
             projects
           </h2>
         </header>
-      </FadeInContent>
+      </SlideInContent>
 
       {/* Content */}
       <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {projects.map((project: Project, index: number) => (
-          <FadeInContent
+          <SlideInContent
             key={index}
             delay={index * 0.2}
             className={`box g${index + 1} rounded-lg p-0.5 ${
@@ -35,7 +35,7 @@ const ProjectSection = () => {
           `}
           >
             <ProjectCard {...project} index={index + 1} />
-          </FadeInContent>
+          </SlideInContent>
         ))}
       </div>
     </div>
