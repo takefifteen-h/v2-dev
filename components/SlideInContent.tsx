@@ -12,6 +12,7 @@ type Props = {
   delay?: number;
   margin?: string;
   className?: string;
+  animateOnce?: boolean;
   direction?: Direction; // New direction prop
 };
 
@@ -37,6 +38,7 @@ const SlideInContent: React.FC<Props> = ({
   delay = 0,
   margin = "0px",
   className,
+  animateOnce = false,
   direction = 'slideRight', // Default direction is from the bottom
 }) => {
   return (
@@ -49,7 +51,7 @@ const SlideInContent: React.FC<Props> = ({
         delay: delay,
       }}
       viewport={{
-        once: true,
+        once: animateOnce,
         margin: margin,
       }}
       custom={direction} // Pass direction as a custom prop
