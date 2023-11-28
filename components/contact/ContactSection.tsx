@@ -1,5 +1,6 @@
 import React from "react";
 import CircularContactButton from "./CircularContactButton";
+import ContactEmailLink from "./ContactEmailLink";
 
 const ContactSection = () => {
   return (
@@ -9,13 +10,19 @@ const ContactSection = () => {
       </h2>
 
       <div className="relative">
-        <hr className="h-0.5 w-full bg-[#5d3b14] opacity-50" />
+        <hr className="h-0.5 w-full bg-[#000000] opacity-50" />
         <CircularContactButton
           label="Contact Me"
           href="#"
           aria-label="contact me"
         />
       </div>
+
+      <ContactEmailLink
+        label="shaikhnagismail@gmail.com"
+        href="mailto:shaikhnagismail@gmail.com"
+        aria-label="email"
+      />
     </section>
   );
 };
