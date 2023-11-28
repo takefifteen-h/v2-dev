@@ -11,7 +11,7 @@ const HeroSection = () => {
 
       <div className="absolute left-0 top-1/2 z-10 mr-auto w-full -translate-y-1/2 text-white">
         <div className="master-container">
-          <SlideInContent delay={3}>
+          <SlideInContent direction="slideRight" delay={0.25}>
             <DynamicHeroText />
           </SlideInContent>
         </div>
