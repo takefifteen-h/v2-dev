@@ -1,11 +1,21 @@
 import React from "react";
+import CircularContactButton from "./CircularContactButton";
 
 const ContactSection = () => {
   return (
-    <section className="master-container flex flex-col gap-y-8 py-[64px] md:gap-y-16 lg:gap-y-24 lg:py-[72px]">
-      <h2 className=" text-[calc(clamp(3.25em,7vw,8em)*0.875)] leading-none ">
+    <section className="master-container py-[64px]">
+      <h2 className="pb-[calc(clamp(5rem,21vh,12rem)*.475)] text-[calc(clamp(3.25em,7vw,8em)*0.875)] leading-none">
         Let&apos;s work <br /> together
       </h2>
+
+      <div className="relative">
+        <hr className="h-0.5 w-full bg-[#5d3b14] opacity-50" />
+        <CircularContactButton
+          label="Contact Me"
+          href="#"
+          aria-label="contact me"
+        />
+      </div>
     </section>
   );
 };
