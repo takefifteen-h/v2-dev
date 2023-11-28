@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${GeistSans.className} relative overflow-x-hidden antialiased`}
       >
-        <GreetingAnimation />
+        {/* <GreetingAnimation /> */}
 
         <Navbar />
 
