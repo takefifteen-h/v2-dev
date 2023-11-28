@@ -27,7 +27,6 @@ const CollapsibleText: React.FC<CollapsibleTextProps> = ({
             ? "font-body-text text-white"
             : "font-small-text text-gray-400"
         } tracking-wide `}
-        onClick={toggleText}
       >
         {showFullText
           ? text
@@ -39,16 +38,18 @@ const CollapsibleText: React.FC<CollapsibleTextProps> = ({
               is greater than or equal to the length of the text
             */}
         {text.length > intialOverviewLength && (
-          <span
+          <button
             className={`${
               size === "body"
                 ? "font-small-text text-gray-400"
                 : "font-extra-small-text text-white"
-            } ml-1 cursor-pointer  group-hover:underline group-hover:underline-offset-1 `}
+            } ml-1 cursor-pointer hover:underline hover:underline-offset-1 `}
             onClick={toggleText}
+            aria-expanded={showFullText ? "true" : "false"}
+            aria-controls="expandable-text"
           >
             {showFullText ? "Read less" : "Read more"}
-          </span>
+          </button>
         )}
       </p>
     </div>
