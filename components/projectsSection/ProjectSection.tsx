@@ -1,5 +1,4 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import { projects, Project } from "@/constants";
