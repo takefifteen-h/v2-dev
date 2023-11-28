@@ -1,7 +1,11 @@
 "use client";
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
+
+type Props = {
+  children: React.ReactNode;
+};
 
 const greetings = [
   "سلام", // ar
@@ -24,7 +28,7 @@ const containerVariants: Variants = {
   },
 };
 
-const GreetingAnimation: React.FC = () => {
+const GreetingAnimation: React.FC<Props> = ({ children }) => {
   const [greetingIndex, setGreetingIndex] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
 
@@ -46,12 +50,13 @@ const GreetingAnimation: React.FC = () => {
   }, [greetingIndex]);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="sync">
       {!isFinished ? (
         <motion.div
+          key={greetingIndex}
           variants={containerVariants}
           exit="exit"
-          className="fixed left-0 top-0 z-50 h-screen w-full overflow-hidden bg-black"
+          className="pointer-events-none fixed left-0 top-0 z-50 h-screen w-full cursor-wait overflow-hidden bg-black"
           style={{ overflow: "hidden" }}
         >
           <motion.h2
@@ -61,7 +66,9 @@ const GreetingAnimation: React.FC = () => {
             <span>•</span> {greetings[greetingIndex]}
           </motion.h2>
         </motion.div>
-      ) : null}
+      ) : (
+        <Fragment key="finished">{children}</Fragment>
+      )}
     </AnimatePresence>
   );
 };

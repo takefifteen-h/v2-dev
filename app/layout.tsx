@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import "./globals.css";
 
-import Navbar from "@/components/navbar/Navbar";
 const GreetingAnimation = dynamic(
   () => import("@/components/GreetingAnimation"),
   {
@@ -27,11 +26,7 @@ export default function RootLayout({
       <body
         className={`${GeistSans.className} relative overflow-x-hidden antialiased`}
       >
-        <GreetingAnimation />
-
-        <Navbar />
-
-        {children}
+        <GreetingAnimation>{children}</GreetingAnimation>
       </body>
     </html>
   );
