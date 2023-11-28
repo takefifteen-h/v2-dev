@@ -5,30 +5,21 @@ import { motion, Variants } from "framer-motion";
 
 type id = "about" | "services" | "projects" | "contact";
 
-type DarkToLightProps = {
-  startColor: "rgb(14, 14, 14)";
-  endColor: "#fff9f2";
+type FadeInSectionProps = {
+  initialColor: string;
+  finalColor: string;
+  textColor: string;
   children: React.ReactNode;
   delay?: number;
   className?: string;
   id?: id;
 };
 
-type LightToDarkProps = {
-  startColor: "#fff9f2";
-  endColor: "rgb(14, 14, 14)";
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-  id?: id;
-};
-
-type Props = DarkToLightProps | LightToDarkProps;
-
-const FadeInSection: React.FC<Props> = ({
+const FadeInSection: React.FC<FadeInSectionProps> = ({
   children,
-  startColor,
-  endColor,
+  initialColor,
+  finalColor,
+  textColor,
   delay = 0,
   className,
   id,
@@ -36,12 +27,10 @@ const FadeInSection: React.FC<Props> = ({
 }) => {
   const sectionVariants: Variants = {
     initial: {
-      backgroundColor: startColor,
-      // color: endColor,
+      backgroundColor: initialColor,
     },
     animate: {
-      backgroundColor: [startColor, endColor],
-      // color: [endColor, startColor],
+      backgroundColor: [initialColor, finalColor],
       transition: {
         delay: delay,
         duration: 0.5,
@@ -60,9 +49,7 @@ const FadeInSection: React.FC<Props> = ({
         once: true,
         margin: "-100px",
       }}
-      className={`${
-        startColor === "rgb(14, 14, 14)" ? "text-[#5d3b14]" : "text-white"
-      }  ${className}}`}
+      className={`${textColor} ${className}`}
       {...props}
     >
       {children}
