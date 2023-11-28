@@ -14,6 +14,7 @@ export default function Home() {
       <main className="max-w-full overflow-x-hidden">
         <HeroSection />
 
+        {/* About Section */}
         <FadeInSection
           id="about"
           aria-label="about"
@@ -23,6 +24,7 @@ export default function Home() {
           <AboutSection />
         </FadeInSection>
 
+        {/* Services Section */}
         <FadeInSection
           id="services"
           aria-label="services"
@@ -32,6 +34,7 @@ export default function Home() {
           <ServiceSection />
         </FadeInSection>
 
+        {/* Projects Section */}
         <FadeInSection
           id="projects"
           aria-label="projects"
@@ -39,6 +42,16 @@ export default function Home() {
           endColor="rgb(14, 14, 14)"
         >
           <ProjectSection />
+        </FadeInSection>
+
+        {/* Contact Section */}
+        <FadeInSection
+          id="contact"
+          aria-label="contact"
+          startColor="rgb(14, 14, 14)"
+          endColor="#fff9f2"
+        >
+          <ContactSection />
         </FadeInSection>
       </main>
     </>
