@@ -37,11 +37,11 @@ const FadeInSection: React.FC<Props> = ({
   const sectionVariants: Variants = {
     initial: {
       backgroundColor: startColor,
-      color: endColor,
+      // color: endColor,
     },
     animate: {
       backgroundColor: [startColor, endColor],
-      color: [endColor, startColor],
+      // color: [endColor, startColor],
       transition: {
         delay: delay,
         duration: 0.5,
@@ -60,6 +60,9 @@ const FadeInSection: React.FC<Props> = ({
         once: true,
         margin: "-100px",
       }}
+      className={`${
+        startColor === "rgb(14, 14, 14)" ? "text-black" : "text-white"
+      }  ${className}}`}
       {...props}
     >
       {children}
