@@ -29,15 +29,15 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
         </FadeInContent>
 
         {/* line on sm screens */}
-        <FadeInContent delay={0.5} margin="0px">
-          <hr className="bg-accent-100 mt-4 flex h-1 w-full opacity-50 md:hidden" />
+        <FadeInContent delay={0.5} margin="0px" className="flex md:hidden">
+          <hr className="bg-accent-100 mt-4 h-1 w-full opacity-50" />
         </FadeInContent>
       </div>
 
       {/* Content */}
       <div className=" text-secondary-500  select-none leading-[2.3rem] md:leading-[2.5rem] lg:leading-[3.4rem]">
         {items.map((item, index) => (
-          <FadeInContent key={index} delay={index * 0.25 + 1} margin="0px">
+          <FadeInContent key={index} delay={index * 0.25 + 0.5} margin="0px">
             <p className="font-general text-special font-extrabold 2xl:text-7xl ">
               {item}
             </p>
