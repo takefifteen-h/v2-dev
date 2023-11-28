@@ -52,21 +52,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {webm && <source src={webm} type="video/webm" />}
           <source src={mp4} type="video/mp4" />
         </video>
-
-        <div className="absolute inset-0 m-3 flex justify-end">
-          <Link
-            href={source_code_link}
-            target="_blank"
-            className="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-black"
-          >
-            <Image
-              src="/images/github.webp"
-              alt="source code"
-              className="h-1/2 w-1/2 object-contain"
-              fill
-            />
-          </Link>
-        </div>
       </div>
 
       {/* description and btns*/}
