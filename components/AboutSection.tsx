@@ -3,7 +3,7 @@ import SlideInContent from "./SlideInContent";
 
 const AboutSection = () => {
   return (
-    <div className="master-container flex h-screen select-none items-center justify-center overflow-hidden">
+    <section className="master-container flex h-screen select-none items-center justify-center overflow-hidden">
       <SlideInContent direction="slideLeft">
         <h2 className="text-4xl font-medium md:text-5xl lg:text-6xl">
           My passion for design, code, and interaction places me uniquely in the
@@ -11,7 +11,7 @@ const AboutSection = () => {
           impactful, immersive journeys.
         </h2>
       </SlideInContent>
-    </div>
+    </section>
   );
 };
 
