@@ -10,10 +10,12 @@ const NavLink: React.FC<NavLinkProps> = ({ href, icon, text }) => {
   return (
     <Link
       href={href}
-      className="relative flex items-center gap-x-1.5 text-base opacity-80 transition-opacity hover:opacity-100"
+      className="transition-color relative flex items-center gap-x-1.5 text-base text-[rgb(155,150,176)] hover:text-[rgb(251,251,254)]"
       aria-label={text}
     >
-      <span aria-hidden="true">{icon}</span>
+      <span aria-hidden="true" className="">
+        {icon}
+      </span>
       <span>{text}</span>
     </Link>
   );
