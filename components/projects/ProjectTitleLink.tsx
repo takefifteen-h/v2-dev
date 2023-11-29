@@ -13,7 +13,7 @@ const ProjectTitleLink: React.FC<ProjectTitleLinkProps> = ({
   return (
     <h3 className="text-[24px] font-bold text-white">
       <Link
-        className="group/link inline-flex w-max items-baseline font-semibold leading-tight text-teal-300 focus-visible:text-teal-300 sm:text-slate-200 sm:hover:text-teal-300"
+        className="group/link inline-flex w-max items-baseline font-semibold leading-tight  text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -26,7 +26,7 @@ const ProjectTitleLink: React.FC<ProjectTitleLinkProps> = ({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="mx-1 inline-block h-6 w-6 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none"
+              className="mx-1 inline-block h-6 w-6 shrink-0 translate-y-px text-teal-300 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none sm:text-inherit"
               aria-hidden="true"
             >
               <path
