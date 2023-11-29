@@ -18,7 +18,7 @@ const ServiceSection = () => {
               <Image src={serviceImg} alt="services icon" fill />
             </div>
             {/* heading */}
-            <h2 className="w-fit text-5xl font-extrabold uppercase md:text-6xl lg:text-7xl xl:text-8xl">
+            <h2 className="w-fit text-[calc(clamp(3.25em,7vw,8em)*0.875)] capitalize font-extrabold">
               services
             </h2>
       </header>
