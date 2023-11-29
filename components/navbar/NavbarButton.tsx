@@ -21,7 +21,7 @@ const NavbarButton: React.FC<ButtonProps> = ({
       {...rest}
       className={`${
         rounded ? "rounded-full" : "rounded-md"
-      } bg-blue-500 px-4 py-2 text-white transition duration-300 ease-in-out hover:bg-blue-600 focus:border-blue-300 focus:outline-none focus:ring active:bg-blue-700`}
+      } bg-[#455ce9] px-4 py-2 font-medium text-white transition duration-300 ease-in-out hover:bg-[#334bd3] focus:border-blue-300 focus:outline-none focus:ring active:bg-[#334bd3]`}
     >
       {label}
     </Link>
