@@ -23,20 +23,24 @@ const VideoCanvas = () => {
     : "/images/video-posters/hero-desktop-poster.webp";
 
      useEffect(() => {
-    if (videoRef.current) {
-          // Listen for the 'loadeddata' event to know when the video has loaded
-          videoRef.current.addEventListener("loadeddata", () => {
-            setVideoLoaded(true);
-      });
-    }
+  // Create a variable to hold the ref value
+  const currentVideoRef = videoRef.current;
 
-    // Clean up event listener on component unmount
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.removeEventListener("loadeddata", () => {});
-      }
-    };
-  }, []);
+  if (currentVideoRef) {
+    // Listen for the 'loadeddata' event to know when the video has loaded
+    currentVideoRef.addEventListener("loadeddata", () => {
+      setVideoLoaded(true);
+    });
+  }
+
+  // Clean up event listener on component unmount
+  return () => {
+    if (currentVideoRef) {
+      currentVideoRef.removeEventListener("loadeddata", () => {});
+    }
+  };
+}, []);
+
 
    return (
     <>
