@@ -16,13 +16,13 @@ const ProjectCardButton: React.FC<ButtonProps> = ({ type, link }) => {
         aria-label="live site"
         className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-pink-500 to-orange-400 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-pink-200 group-hover:from-pink-500 group-hover:to-orange-400 dark:text-white dark:focus:ring-pink-800"
       >
-        <span className="relative rounded-md bg-white px-5 py-2 capitalize transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+        <span className="relative flex items-center rounded-md bg-white px-5 py-2 capitalize transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
           {type}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            className="ml-2 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none"
+            className="ml-1 inline-block h-4 w-4 shrink-0  transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-focus-visible:-translate-y-0.5 group-focus-visible:translate-x-1 motion-reduce:transition-none "
             aria-hidden="true"
           >
             <path
