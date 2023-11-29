@@ -1,9 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
 
 import { Project } from "@/constants";
 
@@ -33,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const lastProjectClasses = "sm:grid sm:grid-cols-12 xl:flex xl:flex-col";
 
   return (
-    <motion.div
+    <article
       className={`${defaultContainerClasses} 
     ${index === 1 && firstProjectClasses}
     ${index === 4 ? lastProjectClasses : halfSpanClasses}
@@ -82,7 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
         </div>
       </div>
-    </motion.div>
+    </article>
   );
 };
 
