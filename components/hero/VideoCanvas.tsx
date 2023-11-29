@@ -58,6 +58,7 @@ const VideoCanvas = () => {
       <video
         ref={videoRef}
         poster={videoPosterPath}
+        preload="auto"
         playsInline
         autoPlay
         muted
