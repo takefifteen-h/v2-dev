@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Video of project */}
       <div className="relative aspect-video overflow-hidden sm:col-span-5">
         <video
-          preload="auto"
+          preload="none"
           autoPlay
           loop
           muted
