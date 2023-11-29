@@ -5,7 +5,7 @@ import ServiceSection from "@/components/service/ServiceSection";
 import FadeInSection from "@/components/FadeInSection";
 import ProjectSection from "@/components/projects/ProjectSection";
 import ContactSection from "@/components/contact/ContactSection";
-import Footerr from "@/components/footer/Footerr";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
@@ -61,7 +61,7 @@ export default function Home() {
       </main>
 
       {/* Footer Section */}
-      <Footerr />
+      <Footer />
     </>
   );
 }
