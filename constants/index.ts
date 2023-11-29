@@ -25,6 +25,11 @@ export type Project = {
   live_site_link?: string;
 };
 
+type Socials = {
+  name: string;
+  url: string;
+};
+
 export const projects: Project[] = [
   {
     projectTitle: "Cozy Cinema",
@@ -117,5 +122,20 @@ export const projects: Project[] = [
     webm: serengeti_webm,
     source_code_link: "https://github.com/PresidentIsmail/Serengeti-Sky-Lodges",
     live_site_link: "https://serengeti-sky-lodges.vercel.app/",
+  },
+];
+
+export const socials: Socials[] = [
+  {
+    name: "Github",
+    url: "https://github.com/PresidentIsmail",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ismail-shaikhnag/",
+  },
+  {
+    name: "Email",
+    url: "mailto:shaikhnagismail@gmail.com",
   },
 ];
