@@ -29,7 +29,7 @@ const FadeInContent: React.FC<Props> = ({
   delay = 0,
   margin = "0px",
   className,
-  animateOnce = false,
+  animateOnce = true,
 }) => {
   return (
     <motion.div
