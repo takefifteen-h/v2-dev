@@ -40,7 +40,6 @@ const CircularContactButton: React.FC<ButtonProps> = ({
     }}
     className="group absolute right-0"
     >
-      {/* -translate-x-1/4  */}
     <Link
       href={href}
       {...rest}
