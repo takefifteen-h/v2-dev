@@ -20,7 +20,7 @@ const ProjectSection = () => {
           </div>
 
           {/* heading */}
-          <h2 className="w-fit font-semibold text-[calc(clamp(3.25em,7vw,8em)*0.875)] capitalize">
+          <h2 className="w-fit font-bold text-[calc(clamp(3.25em,7vw,8em)*0.875)] capitalize">
             projects
           </h2>
         </header>
