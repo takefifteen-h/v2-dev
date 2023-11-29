@@ -57,12 +57,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* description and btns*/}
       <div className=" sm:col-span-7">
         {/* description */}
-        <div className="mt-5 flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2">
           <ProjectTitleLink
             href={source_code_link}
             projectTitle={projectTitle}
           />
-          <div className="mb-2 flex flex-wrap gap-2">
+          <div className="mb-2 flex -translate-x-0.5 flex-wrap gap-2">
             {tags.map((tag, index) => (
               <Badge key={index} label={tag.name} />
             ))}
