@@ -48,27 +48,31 @@ const Navbar = () => {
     <motion.nav
       variants={navbarVariants}
       animate={isScrolled ? "hidden" : "visible"}
-      className="fixed top-0 z-40 flex h-navbar-mobile w-full items-center  justify-between bg-[#121212d9] px-5 text-white  md:h-navbar-desktop"
+      className="fixed top-0 z-40  h-navbar-mobile w-full bg-[#121212d9] text-white  md:h-navbar-desktop"
       style={{ backdropFilter: "blur(10px) saturate(180%)" }}
     >
-      <Link href="/">
-        <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
-          <Image
-            src="../logos/ismail-white.svg"
-            alt="Logo Of Ismail Shaikhnag"
-            fill
-            priority
-          />
-        </div>
-      </Link>
-      {/* displaty desktop menu if the window width is greater than 768px */}
-      {windowWidth && windowWidth > MOBILE_WIDTH ? (
-        <DesktopMenu />
-      ) : (
-        <FadeInContent delay={0.25}>
-          <NavbarButton label="Get In Touch" href="#contact" />
-        </FadeInContent>
-      )}
+      <section className="master-container flex h-full items-center justify-between">
+        {/* Logo */}
+        <Link href="/">
+          <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
+            <Image
+              src="../logos/ismail-white.svg"
+              alt="Logo Of Ismail Shaikhnag"
+              fill
+              priority
+            />
+          </div>
+        </Link>
+
+        {/* displaty desktop menu if the window width is greater than 768px */}
+        {windowWidth && windowWidth > MOBILE_WIDTH ? (
+          <DesktopMenu />
+        ) : (
+          <FadeInContent delay={0.25}>
+            <NavbarButton label="Get In Touch" href="#contact" />
+          </FadeInContent>
+        )}
+      </section>
     </motion.nav>
   );
 };
