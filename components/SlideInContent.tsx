@@ -38,7 +38,7 @@ const SlideInContent: React.FC<Props> = ({
   delay = 0,
   margin = "0px",
   className,
-  animateOnce = false,
+  animateOnce = true,
   direction = 'slideRight', // Default direction is from the bottom
 }) => {
   return (

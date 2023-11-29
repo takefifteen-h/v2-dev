@@ -9,15 +9,19 @@ import { LuArrowDownLeft } from "react-icons/lu";
 type ButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   label: string;
   href: string;
+  animateOnce?:boolean
 };
 
 const linkButtonVariants: Variants = {
   initial: {
-    x: 0
+    opacity: 0,
+    x: 50
   },
   animate: {
+    opacity: 1,
     x: "-25%",
     transition: {
+      delay: 0.5,
       duration: 0.5,
       ease: "linear"
     }
@@ -27,6 +31,7 @@ const linkButtonVariants: Variants = {
 const CircularContactButton: React.FC<ButtonProps> = ({
   label,
   href,
+  animateOnce = true,
   ...rest
 }) => {
   return (
@@ -35,7 +40,7 @@ const CircularContactButton: React.FC<ButtonProps> = ({
     initial="initial"
     whileInView="animate"
     viewport={{
-      once: true,
+      once: animateOnce,
       margin: "0px"
     }}
     className="group absolute right-0"
@@ -46,7 +51,7 @@ const CircularContactButton: React.FC<ButtonProps> = ({
       className={` flex h-[100px] w-[100px]  min-w-max  -translate-y-1/2  items-center justify-center rounded-[50%] bg-[#455ce9] font-medium text-white transition duration-300 ease-in-out hover:bg-[#334bd3] focus:bg-[hsl(232,79%,65%)] focus:outline-none focus:ring-1 active:bg-[#334bd3] md:h-[150px] md:w-[150px]`}
     >
       {label}
-      <LuArrowDownLeft className="absolute text-xl md:text-2xl -right-3 -top-5 text-black transition-all duration-500 group-hover:animate-wiggle group-focus:animate-wiggle" />
+      <LuArrowDownLeft className="absolute text-xl md:text-2xl -right-3 -top-3 text-black transition-all duration-500 group-hover:animate-wiggle group-focus:animate-wiggle" />
     </Link>
   </motion.div>
   );
