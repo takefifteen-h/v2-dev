@@ -6,7 +6,7 @@ import selfImg from "../../public/logos/ismail-white.svg";
 
 const Footerr = () => {
   return (
-    <footer className="bg-stars bg-black pt-[64px]">
+    <footer className="bg-stars bg-[rgb(0,0,0)] pt-[64px]">
       <section className=" relative flex aspect-[401/151] min-h-[100px]  ">
         <Image
           src={"/logos/ismail-white.svg"}
