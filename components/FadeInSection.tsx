@@ -11,6 +11,7 @@ type FadeInSectionProps = {
   textColor: string;
   children: React.ReactNode;
   delay?: number;
+  duration?: number;
   className?: string;
   id?: id;
 };
@@ -21,6 +22,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
   finalColor,
   textColor,
   delay = 0,
+  duration = 0.25,
   className,
   id,
   ...props
@@ -33,7 +35,7 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
       backgroundColor: [initialColor, finalColor],
       transition: {
         delay: delay,
-        duration: 0.5,
+        duration: duration,
         ease: "easeInOut",
       },
     },
