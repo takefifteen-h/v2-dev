@@ -21,9 +21,7 @@ const RenderLocalTime = () => {
         second: "numeric",
         hour12: true,
       };
-      const timeString = `${date.toLocaleString("en-US", options)} ${
-        Intl.DateTimeFormat().resolvedOptions().timeZone
-      }`;
+      const timeString = `${date.toLocaleString("en-US", options)} `;
       setTime(timeString);
     };
 
