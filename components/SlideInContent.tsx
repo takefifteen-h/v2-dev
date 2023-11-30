@@ -21,8 +21,8 @@ const containerVariants: Variants = {
   hidden: (direction: Direction) => {
     return {
       opacity: 0,
-      x: direction === 'slideRight' ? -50 : direction === 'slideLeft' ? 50 : 0,
-      y: direction === 'slideDown' ? -50 : direction === 'slideUp' ? 50 : 0,
+      x: direction === "slideRight" ? -50 : direction === "slideLeft" ? 50 : 0,
+      y: direction === "slideDown" ? -50 : direction === "slideUp" ? 50 : 0,
     };
   },
   visible: {
@@ -39,7 +39,7 @@ const SlideInContent: React.FC<Props> = ({
   margin = "0px",
   className,
   animateOnce = true,
-  direction = 'slideRight', // Default direction is from the bottom
+  direction = "slideRight", // Default direction is from the bottom
 }) => {
   return (
     <motion.div
