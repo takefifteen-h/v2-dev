@@ -1,5 +1,5 @@
 import React from "react";
-import SlideInContent from "./SlideInContent";
+import SlideInContent from "../SlideInContent";
 
 const AboutSection = () => {
   return (

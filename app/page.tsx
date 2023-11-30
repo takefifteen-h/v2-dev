@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar/Navbar";
 import HeroSection from "@/components/hero/HeroSection";
-import AboutSection from "@/components/AboutSection";
+import AboutSection from "@/components/about/AboutSection";
 import ServiceSection from "@/components/service/ServiceSection";
 import FadeInSection from "@/components/FadeInSection";
 import ProjectSection from "@/components/projects/ProjectSection";
