@@ -34,7 +34,7 @@ const Footer = () => {
 
       {/* Footer of Footer */}
       <section className="master-container mt-10 flex w-full flex-col justify-between gap-y-4 md:flex-row">
-        <SlideInContent delay={0.75}>
+        <SlideInContent delay={0.5}>
           <div className="flex items-center justify-between gap-x-8 md:justify-start ">
             <RenderVersion />
             <RenderLocalTime />
@@ -42,7 +42,7 @@ const Footer = () => {
         </SlideInContent>
 
         {/* horizontal hidden on md screens */}
-        <SlideInContent delay={1}>
+        <SlideInContent delay={0.75}>
           <div className="my-4 flex h-[1px] w-full bg-white/50 md:hidden" />
         </SlideInContent>
 

@@ -10,7 +10,7 @@ type Props = {};
 const RenderSocials: FC<Props> = (props: Props) => {
   return (
     <div className="flex flex-col items-start gap-y-2 lg:gap-y-4">
-      <SlideInContent delay={1.25}>
+      <SlideInContent delay={1}>
         <h5 className="text-xs font-semibold uppercase text-white/50 lg:text-sm">
           Socials
         </h5>
