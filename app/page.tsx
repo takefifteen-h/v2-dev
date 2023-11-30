@@ -16,15 +16,7 @@ export default function Home() {
         <HeroSection />
 
         {/* About Section */}
-        <FadeInSection
-          id="about"
-          aria-label="about"
-          textColor="text-white"
-          initialColor="#fff9f2"
-          finalColor="rgb(14, 14, 14)"
-        >
           <AboutSection />
-        </FadeInSection>
 
         {/* Services Section */}
         <FadeInSection
