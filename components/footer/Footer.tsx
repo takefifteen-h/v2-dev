@@ -1,12 +1,9 @@
 "use client";
 import { useEffect, useState, FC } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
-import { socials } from "@/constants";
-
-import contactIcon from "../../public/images/icons/contact.svg";
 import { LuArrowDownRight } from "react-icons/lu";
+import RenderSocials from "./RenderSocials";
 
 interface TimeOptions {
   hour: "numeric" | "2-digit";
@@ -57,37 +54,6 @@ const Footer: FC = () => {
     </div>
   );
 
-  const renderSocials = () => (
-    <div className="flex flex-col items-start gap-y-2 lg:gap-y-4">
-      <h5 className="text-xs font-semibold uppercase text-white/50 lg:text-sm">
-        Socials
-      </h5>
-      <div className="flex items-center gap-x-4">
-        {socials.map((social) => (
-          <div key={social.name} className="group flex flex-col">
-            <Link
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Follow me on ${social.name}`}
-              role="link"
-              className="text-sm text-white"
-            >
-              <span className=" mr-1 inline-block translate-y-0.5">
-                {social.icon()}
-              </span>
-              {social.name}
-            </Link>
-
-            <span
-              className="h-[1px] w-0 bg-white  
-                transition-all duration-300 ease-in-out group-hover:w-full"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
 
   return (
     <footer className="flex w-full flex-col gap-y-12 bg-[#0d0d0d] bg-stars pb-4 pt-[64px] md:pb-6">
@@ -119,7 +85,7 @@ const Footer: FC = () => {
         {/* horizontal hidden on md screens */}
         <div className="my-4 flex h-[1px] w-full bg-white/50 md:hidden" />
 
-        {renderSocials()}
+        <RenderSocials />
       </section>
     </footer>
   );
