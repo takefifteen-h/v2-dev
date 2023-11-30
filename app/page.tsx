@@ -61,7 +61,15 @@ export default function Home() {
       </main>
 
       {/* Footer Section */}
-      <Footer />
+      <FadeInSection
+        id="footer"
+        aria-label="footer"
+        initialColor="rgb(14, 14, 14)"
+        finalColor="#0d0d0d"
+        textColor="text-white"
+      >
+        <Footer />
+      </FadeInSection>
     </>
   );
 }

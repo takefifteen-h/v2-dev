@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-type id = "about" | "services" | "projects" | "contact";
+type id = "about" | "services" | "projects" | "contact" | "footer";
 
 type FadeInSectionProps = {
   initialColor: string;

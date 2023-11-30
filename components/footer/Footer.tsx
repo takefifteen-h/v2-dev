@@ -7,7 +7,7 @@ import RenderLocalTime from "./RenderLocalTime";
 
 const Footer = () => {
   return (
-    <footer className="flex w-full flex-col gap-y-12 bg-[#0d0d0d] bg-stars pb-4 pt-[64px] md:pb-6">
+    <footer className="flex w-full flex-col gap-y-12 bg-stars pb-4 pt-[64px] md:pb-6">
       {/* Header */}
       <header className="master-container flex w-full select-none  justify-start text-white/50">
         <h2 className=" text-[calc(clamp(3.25em,7vw,8em)*0.875)] font-semibold leading-none">
