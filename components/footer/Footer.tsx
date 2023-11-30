@@ -1,51 +1,11 @@
-"use client";
-import { useEffect, useState, FC } from "react";
 import Image from "next/image";
 
 import { LuArrowDownRight } from "react-icons/lu";
 import RenderSocials from "./RenderSocials";
 import RenderVersion from "./RenderVersion";
+import RenderLocalTime from "./RenderLocalTime";
 
-interface TimeOptions {
-  hour: "numeric" | "2-digit";
-  minute: "numeric" | "2-digit";
-  second: "numeric" | "2-digit";
-  hour12: boolean;
-}
-
-const Footer: FC = () => {
-  const [time, setTime] = useState<string>("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const date = new Date();
-      const options: TimeOptions = {
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-        hour12: true,
-      };
-      const timeString = `${date.toLocaleString("en-US", options)} ${
-        Intl.DateTimeFormat().resolvedOptions().timeZone
-      }`;
-      setTime(timeString);
-    };
-
-    updateTime();
-    const intervalId = setInterval(updateTime, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  const renderLocalTime = () => (
-    <div className="flex flex-col items-start gap-y-2 lg:gap-y-4">
-      <h5 className="text-xs font-semibold uppercase text-white/50 lg:text-sm">
-        Local Time
-      </h5>
-      <p className="text-sm text-white">{time}</p>
-    </div>
-  );
-
+const Footer = () => {
   return (
     <footer className="flex w-full flex-col gap-y-12 bg-[#0d0d0d] bg-stars pb-4 pt-[64px] md:pb-6">
       {/* Header */}
@@ -70,7 +30,8 @@ const Footer: FC = () => {
       <section className="master-container mt-10 flex w-full flex-col justify-between gap-y-4 md:flex-row">
         <div className="flex items-center justify-between gap-x-8 md:justify-start ">
           <RenderVersion />
-          {renderLocalTime()}
+
+          <RenderLocalTime />
         </div>
 
         {/* horizontal hidden on md screens */}
