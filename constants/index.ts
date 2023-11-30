@@ -15,6 +15,9 @@ const crispycanvas_webm =
 const globetracer_webm =
   "videos/project-walkthoughs/webm/globetracer_walkthrough.webm";
 
+  import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu";
+
+
 export type Project = {
   projectTitle: string;
   description: string;
@@ -28,6 +31,7 @@ export type Project = {
 type Socials = {
   name: string;
   url: string;
+  icon: any;
 };
 
 export const projects: Project[] = [
@@ -129,13 +133,16 @@ export const socials: Socials[] = [
   {
     name: "Github",
     url: "https://github.com/PresidentIsmail",
+    icon: LuGithub,
   },
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/ismail-shaikhnag/",
+    icon: LuLinkedin,
   },
   {
     name: "Email",
     url: "mailto:shaikhnagismail@gmail.com",
+    icon: LuMail,
   },
 ];
