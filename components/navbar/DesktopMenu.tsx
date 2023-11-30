@@ -15,22 +15,22 @@ const DesktopMenu = () => {
     <ul className="flex items-center justify-between space-x-6">
       <li>
         <FadeInContent>
-          <NavLink href="#about" icon={<About />} text="About" />
+          <NavLink href="#about" icon={<About />} text="About" aria-label="About section" />
         </FadeInContent>
       </li>
       <li>
         <FadeInContent delay={0.25}>
-          <NavLink href="#services" icon={<PiHandshake />} text="Services" />
+          <NavLink href="#services" icon={<PiHandshake />} text="Services" aria-label="Services section" />
         </FadeInContent>
       </li>
       <li>
         <FadeInContent delay={0.5}>
-          <NavLink href="#projects" icon={<Target />} text="Projects" />
+          <NavLink href="#projects" icon={<Target />} text="Projects" aria-label="Projects section" />
         </FadeInContent>
       </li>
       <li>
         <FadeInContent delay={0.75}>
-          <NavLink href="#contact" icon={<Phone />} text="Contact" />
+          <NavLink href="#contact" icon={<Phone />} text="Contact" aria-label="Contact section" />
         </FadeInContent>
       </li>
     </ul>
