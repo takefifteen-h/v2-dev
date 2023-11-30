@@ -64,7 +64,7 @@ export default function Home() {
       <FadeInSection
         id="footer"
         aria-label="footer"
-        initialColor="rgb(14, 14, 14)"
+        initialColor="#fff9f2"
         finalColor="#0d0d0d"
         textColor="text-white"
       >
