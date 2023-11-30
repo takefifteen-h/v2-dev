@@ -31,7 +31,7 @@ const ContactSection = () => {
         />
       </div>
 
-      <SlideInContent delay={1}>
+      <SlideInContent delay={0.5}>
         <ContactEmailLink
           label="shaikhnagismail@gmail.com"
           href="mailto:shaikhnagismail@gmail.com"
