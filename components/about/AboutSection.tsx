@@ -9,7 +9,7 @@ const AboutSection = () => {
     <section
       id="about"
       aria-label="about"
-      className="flex h-screen select-none items-center justify-center overflow-hidden bg-[rgb(14,14,14)] text-white"
+      className="flex h-screen select-none items-center justify-center overflow-hidden"
     >
       <h2 className="master-container text-3xl font-medium md:text-5xl lg:text-6xl">
         <AnimatedParagraph paragraph={paragraph} />
