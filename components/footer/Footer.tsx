@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import { LuArrowDownRight } from "react-icons/lu";
 import RenderSocials from "./RenderSocials";
+import RenderVersion from "./RenderVersion";
 
 interface TimeOptions {
   hour: "numeric" | "2-digit";
@@ -36,15 +37,6 @@ const Footer: FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const renderVersion = () => (
-    <div className="flex flex-col items-start gap-y-2 lg:gap-y-4">
-      <h5 className="text-xs font-semibold uppercase text-white/50 lg:text-sm">
-        Version
-      </h5>
-      <p className="text-sm text-white">2022 &copy; Edition</p>
-    </div>
-  );
-
   const renderLocalTime = () => (
     <div className="flex flex-col items-start gap-y-2 lg:gap-y-4">
       <h5 className="text-xs font-semibold uppercase text-white/50 lg:text-sm">
@@ -53,7 +45,6 @@ const Footer: FC = () => {
       <p className="text-sm text-white">{time}</p>
     </div>
   );
-
 
   return (
     <footer className="flex w-full flex-col gap-y-12 bg-[#0d0d0d] bg-stars pb-4 pt-[64px] md:pb-6">
@@ -78,7 +69,7 @@ const Footer: FC = () => {
       {/* Footer of Footer */}
       <section className="master-container mt-10 flex w-full flex-col justify-between gap-y-4 md:flex-row">
         <div className="flex items-center justify-between gap-x-8 md:justify-start ">
-          {renderVersion()}
+          <RenderVersion />
           {renderLocalTime()}
         </div>
 
