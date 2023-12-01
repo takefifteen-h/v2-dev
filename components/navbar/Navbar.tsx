@@ -64,14 +64,13 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* displaty desktop menu if the window width is greater than 768px */}
-        {windowWidth && windowWidth > MOBILE_WIDTH ? (
+        {/* will only display on md: screens and above*/}
           <DesktopMenu />
-        ) : (
-          <FadeInContent delay={0.25}>
+
+          {/* will only display on sm screens */}
+          <FadeInContent delay={0.25} className="md:hidden">
             <NavbarButton label="Get In Touch" href="#contact" />
           </FadeInContent>
-        )}
       </section>
     </motion.nav>
   );

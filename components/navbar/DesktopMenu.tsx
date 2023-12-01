@@ -12,7 +12,7 @@ import FadeInContent from "../FadeInContent";
 
 const DesktopMenu = () => {
   return (
-    <ul className="flex items-center justify-between space-x-6">
+    <ul className="hidden md:flex items-center justify-between space-x-6">
       <li>
         <FadeInContent>
           <NavLink
