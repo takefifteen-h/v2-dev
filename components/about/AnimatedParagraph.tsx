@@ -3,18 +3,38 @@
 import { FC, useRef } from "react";
 import { motion, useScroll, MotionValue, useTransform } from "framer-motion";
 
-type Props = {
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+
+type AnimatedParagraphProps = {
   paragraph: string;
 };
 
-const AnimatedParagraph: FC<Props> = ({ paragraph }) => {
-  const paragraphRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: paragraphRef,
-    offset: ["start 0.85", "start 0.4"],
-  });
+const AnimatedParagraph: React.FC<AnimatedParagraphProps> = ({ paragraph }) => {
+  const paragraphRef = useRef<HTMLSpanElement>(null);
 
   const words = paragraph.split(" ");
+  const breakpoint = useBreakpoint();
+
+  const getOffsetValues = () => {
+    switch (breakpoint) {
+      case "sm":
+        return ["start 0.85", "start 0.4"];
+      case "md":
+        return ["start 0.85", "start 0.4"];
+      case "lg":
+        return ["start 0.75", "start 0.2"];
+      case "xl":
+        return ["start 0.65", "start 0.1"];
+      default:
+        return ["start 0.85", "start 0.4"];
+    }
+  };
+
+  const { scrollYProgress } = useScroll({
+    target: paragraphRef,
+    // @ts-ignore
+    offset: getOffsetValues(),
+  });
 
   return (
     <span ref={paragraphRef} className="relative flex flex-wrap leading-none ">
