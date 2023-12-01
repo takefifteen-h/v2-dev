@@ -5,6 +5,7 @@ import { Project } from "@/constants";
 import ProjectCardButton from "./ProjectCardButton";
 import CollapsibleText from "./CollapsibleText";
 import ProjectTitleLink from "./ProjectTitleLink";
+import VideoLoader from "./VideoLoader";
 
 type ProjectCardProps = Project & {
   index: number;
@@ -36,17 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {/* Video of project */}
       <div className="relative aspect-video overflow-hidden sm:col-span-5">
-        <video
-          preload="none"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-full w-full rounded-none object-cover"
-        >
-          {webm && <source src={webm} type="video/webm" />}
-          <source src={mp4} type="video/mp4" />
-        </video>
+       <VideoLoader mp4={mp4} webm={webm}/>
       </div>
 
       {/* description and btns*/}
