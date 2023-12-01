@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
 
+import { BiError } from "react-icons/bi";
 import Skeleton from "../skeleton/Skeleton";
 
 interface Props {
@@ -45,6 +46,17 @@ return (
         <Skeleton/>
       )}
 
+      {videoError && (
+        <div className="flex flex-col items-center justify-center h-full w-full border-[1px]">
+          <BiError className="text-red-500 text-4xl" aria-hidden={true} />
+          <p 
+          className="text-white text-xl md:text-2xl font-semibold"
+          >
+          Failed to load media. <br /> Unable to play the file
+          </p>
+        </div>
+      )}
+
       <video
         ref={videoRef}
         preload="none"
@@ -55,8 +67,8 @@ return (
         className="h-full w-full rounded-none object-cover"
         onError={handleError}
       >
-        <source src={mp4} type="video/mp4" />
         {webm && <source src={webm} type="video/webm" />}
+        <source src={mp4} type="video/mp4" />
         <p className="text-white">
             Your browser does not support the video tag.
         </p>
