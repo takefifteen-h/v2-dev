@@ -6,7 +6,7 @@ import SlideInContent from "../SlideInContent";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[80vh] md:min-h-screen w-full overflow-hidden bg-[rgb(14,14,14)]">
+    <section className="relative min-h-[80vh] sm:min-h-[90vh] md:min-h-screen w-full overflow-hidden bg-[rgb(14,14,14)]">
       <VideoCanvas />
 
       <div className="absolute left-0 top-1/2 z-10 mr-auto w-full -translate-y-1/2 text-white">
