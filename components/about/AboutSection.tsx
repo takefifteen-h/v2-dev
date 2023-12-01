@@ -15,7 +15,7 @@ const AboutSection = () => {
     <section
       id="about"
       aria-label="about"
-      className="flex py-[64px] lg:py-[72px] select-none items-center justify-center overflow-hidden"
+      className="flex py-[64px] bg-[rgb(14,14,14)] lg:py-[72px] select-none items-center justify-center overflow-hidden"
     >
       {/* <h2 className="master-container text-3xl font-medium md:text-5xl lg:text-6xl"> */}
       <h2 className="master-container text-heading-1 text-secondary-400 font-medium leading-[1.25em] md:leading-[1.08em] my-[10%]">
