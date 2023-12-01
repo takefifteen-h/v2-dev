@@ -64,6 +64,10 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
+      viewport={{ 
+        once: true,
+        amount: 0.5,
+      }}
       transition={{
         duration: 0.5,
         delay: animationDelay,
