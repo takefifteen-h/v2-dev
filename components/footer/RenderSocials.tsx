@@ -3,9 +3,7 @@ import Link from "next/link";
 
 import { socials } from "@/constants";
 
-type Props = {};
-
-const RenderSocials: FC<Props> = (props: Props) => {
+const RenderSocials = () => {
   return (
     <div className="flex flex-col order-1 md:order-3 items-start gap-y-2 lg:gap-y-4">
 
