@@ -19,15 +19,7 @@ export default function Home() {
           <AboutSection />
 
         {/* Services Section */}
-        <FadeInSection
-          id="services"
-          aria-label="services"
-          initialColor="rgb(14, 14, 14)"
-          finalColor="#fff9f2"
-          textColor="text-[#5d3b14]"
-        >
           <ServiceSection />
-        </FadeInSection>
 
         {/* Projects Section */}
         <FadeInSection
