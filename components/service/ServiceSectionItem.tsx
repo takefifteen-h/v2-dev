@@ -22,11 +22,28 @@ const containerVariants: Variants = {
 const childVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: -50,
+    y: -20,
   },
   visible: {
     opacity: 1,
     y: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+      type: "spring",
+      stiffness: 50,
+    },
+  },
+};
+
+const lineVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    width: 0,
+  },
+  visible: {
+    opacity: 1,
+    width: "100%",
     transition: {
       duration: 0.3,
       ease: "easeInOut",
@@ -52,7 +69,6 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
         delay: animationDelay,
         when: "beforeChildren",
         staggerChildren: 0.2,
-
       }}
       className=" grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-24 "
     >
@@ -73,7 +89,10 @@ const ServiceSectionItem: React.FC<ServiceSectionItemProps> = ({
       </div>
 
       {/* line on sm screens */}
-      <hr className="block h-1 w-full bg-[#5d3b14] opacity-50 md:hidden" />
+      <motion.hr
+        variants={lineVariants}
+        className="block h-1 w-full bg-[#5d3b14] opacity-50 md:hidden"
+      />
 
       {/* Content */}
       <div className=" select-none leading-[2.3rem] text-[#5d3b14] md:leading-[2.5rem] lg:leading-[3.4rem]">

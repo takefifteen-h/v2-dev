@@ -9,7 +9,11 @@ import SlideInContent from "../SlideInContent";
 
 const Footer = () => {
   return (
-    <footer className="flex w-full flex-col gap-y-12 bg-stars pb-4 pt-[64px] md:pb-6">
+    <footer
+      id="footer"
+      aria-label="footer"
+      className="flex w-full flex-col gap-y-12 bg-[#0d0d0d] bg-stars pb-4 pt-[64px] text-white md:pb-6"
+    >
       {/* Header */}
       <FadeInContent>
         <header className="master-container flex w-full select-none  justify-start text-white/50">
@@ -34,22 +38,21 @@ const Footer = () => {
 
       {/* Bottom of footer  */}
       <section className="master-container mt-10 flex w-full flex-col justify-between gap-y-4 md:flex-row">
-        <SlideInContent delay={0.5} className=" md:order-1 order-3">
-          <div className="flex items-start md:items-center md:flex-row justify-between gap-x-8 gap-y-4 md:justify-start ">
+        <SlideInContent delay={0.5} className=" order-3 md:order-1">
+          <div className="flex items-start justify-between gap-x-8 gap-y-4 md:flex-row md:items-center md:justify-start ">
             <RenderVersion />
             <RenderLocalTime />
           </div>
         </SlideInContent>
 
         {/* horizontal hidden on md screens */}
-        <SlideInContent delay={0.5} className="order-2">
-          <div className="my-1 flex h-[1px] w-full bg-white/50 md:hidden " />
+        <SlideInContent delay={0.5} className="order-2 md:hidden">
+          <div className="my-1 flex h-[1px] w-full bg-white/50  " />
         </SlideInContent>
 
-        <SlideInContent delay={0.5}>
+        <SlideInContent delay={0.5} className=" order-1 md:order-3">
           <RenderSocials />
         </SlideInContent>
-       
       </section>
     </footer>
   );
