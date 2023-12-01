@@ -9,7 +9,7 @@ import SlideInContent from "../SlideInContent";
 
 const ContactSection = () => {
   return (
-    <section className="master-container py-[64px]">
+    <section className="master-container py-[64px] lg:py-[72px]">
       <FadeInContent>
         <header className="flex w-full select-none items-start justify-start gap-x-2 pb-[calc(clamp(5rem,21vh,12rem)*.475)]">
           {/* icon */}
