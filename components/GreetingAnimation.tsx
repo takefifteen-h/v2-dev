@@ -53,7 +53,7 @@ const GreetingAnimation: React.FC<Props> = ({ children }) => {
 
   return (
     <AnimatePresence mode="sync">
-      {false ? (
+      {!isFinished ? (
         <motion.div
           key={greetingIndex}
           variants={containerVariants}
