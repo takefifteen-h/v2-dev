@@ -60,7 +60,11 @@ type DuplicateWordsProps = {
 };
 
 const DuplicateWords: FC<DuplicateWordsProps> = ({ words }) => (
-  <span className="absolute flex flex-wrap leading-none opacity-[0.05]">
+  <span 
+  className="absolute flex flex-wrap leading-none opacity-[0.05]"
+  // hide from screen readers
+  aria-hidden="true"
+  >
     {words.map((word, index) => (
       <span key={index} className="mr-2 mt-2 md:mr-3 md:mt-3">
         {word}
