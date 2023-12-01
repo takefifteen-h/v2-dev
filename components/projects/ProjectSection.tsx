@@ -10,9 +10,12 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectSection = () => {
   return (
-    <div className="master-container py-[64px] lg:py-[72px] flex flex-col gap-y-8 md:gap-y-16 lg:gap-y-24">
+    <section 
+    id="projects"
+    aria-label="projects"
+    className="bg-[rgb(14,14,14)] text-white py-[64px] lg:py-[72px] flex flex-col gap-y-8 md:gap-y-16 lg:gap-y-24">
       {/* Header */}
-      <FadeInContent >
+      <FadeInContent className="master-container" >
         <header className="flex w-full select-none items-center justify-start gap-x-2">
           {/* icon */}
           <div className="relative h-[30px] w-[30px] md:h-[48px] md:w-[48px] lg:h-[56px] lg:w-[56px]">
@@ -27,7 +30,7 @@ const ProjectSection = () => {
       </FadeInContent>
 
       {/* Content */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="master-container grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {projects.map((project: Project, index: number) => (
           <SlideInContent
             key={index}
@@ -42,7 +45,7 @@ const ProjectSection = () => {
           </SlideInContent>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

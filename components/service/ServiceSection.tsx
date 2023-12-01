@@ -12,9 +12,9 @@ const ServiceSection = () => {
     <section
       id="services"
       aria-label="services"
-      className="master-container flex flex-col gap-y-8 bg-[#fff9f2] py-[64px] text-[#5d3b14] md:gap-y-16 lg:gap-y-24 lg:py-[72px]"
+      className=" flex flex-col gap-y-8 bg-[#fff9f2] py-[64px] text-[#5d3b14] md:gap-y-16 lg:gap-y-24 lg:py-[72px]"
     >
-      <FadeInContent>
+      <FadeInContent className="master-container">
         {/* Header */}
         <header className="flex max-w-full select-none items-center justify-start gap-x-2">
           {/* icon */}
@@ -29,7 +29,7 @@ const ServiceSection = () => {
       </FadeInContent>
 
       {/* Content */}
-      <section className="flex flex-col gap-y-8 md:gap-y-16 lg:gap-y-24">
+      <section className="master-container flex flex-col gap-y-8 md:gap-y-16 lg:gap-y-24">
         <ServiceSectionItem
           header="my expertises."
           paragraph="I focus on all things design and web related. With each of my services, my goal is to deliver an impactful and elevating digital experience for everyone."
