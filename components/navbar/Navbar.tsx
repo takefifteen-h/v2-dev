@@ -32,12 +32,11 @@ const MOBILE_WIDTH = 768;
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
-  const windowWidth = useWindowWidth();
 
   useMotionValueEvent(scrollY, "change", (latestScrollY) => {
     const previousScrollY = scrollY.getPrevious();
 
-    if (latestScrollY > previousScrollY) {
+    if (latestScrollY > 300 && latestScrollY > previousScrollY) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -65,12 +64,12 @@ const Navbar = () => {
         </Link>
 
         {/* will only display on md: screens and above*/}
-          <DesktopMenu />
+        <DesktopMenu />
 
-          {/* will only display on sm screens */}
-          <FadeInContent delay={0.25} className="md:hidden">
-            <NavbarButton label="Get In Touch" href="#contact" />
-          </FadeInContent>
+        {/* will only display on sm screens */}
+        <FadeInContent delay={0.25} className="md:hidden">
+          <NavbarButton label="Get In Touch" href="#contact" />
+        </FadeInContent>
       </section>
     </motion.nav>
   );
