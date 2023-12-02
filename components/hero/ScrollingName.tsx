@@ -1,41 +1,58 @@
 "use client";
 
-import { motion, Variants, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
-
-const variants: Variants = {
-  hidden: {
-    x: "-110%",
-  },
-  visible: {
-    x: "-10%",
-    transition: {
-      duration: 15,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "loop",
-    },
-  },
-};
+import {
+  motion,
+  Variants,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "framer-motion";
+import React, { useRef, useState } from "react";
 
 const ScrollingName: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+
+  useMotionValueEvent(scrollYProgress, "change", (latestScrollY) => {
+    console.log("latestScrollY => ", latestScrollY);
+
+    if (latestScrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  });
+
+  const variants: Variants = {
+    hidden: {
+      x: isScrolled ? "0%" : "-100%",
+    },
+    visible: {
+      x: isScrolled ? "-100%" : "-0%",
+      transition: {
+        duration: isScrolled ? 5 : 5,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "loop",
+      },
+    },
+  };
 
   return (
     <motion.div
       ref={containerRef}
-      className="absolute bottom-0 left-0 flex whitespace-nowrap text-[max(9em,15vw)] font-light leading-none text-white"
+      className="flex select-none whitespace-nowrap pb-[10vh] text-[max(7rem,12vw)] font-medium leading-none text-white md:order-2"
       style={{ opacity }}
     >
       <motion.div
         variants={variants}
         initial="hidden"
         animate="visible"
-        className="flex gap-x-1"
+        className="flex"
       >
-        <span aria-hidden="true">-</span>
+        <span aria-hidden="true">&nbsp; &mdash; &nbsp;</span>
         <h1>Ismail Shaikhnag</h1>
       </motion.div>
 
@@ -43,10 +60,21 @@ const ScrollingName: React.FC = () => {
         variants={variants}
         initial="hidden"
         animate="visible"
-        className="flex gap-x-1"
+        className="flex"
         aria-hidden="true" // prevent the screen reader from reading the text twice
       >
-        <span>-</span>
+        <span aria-hidden="true">&nbsp; &mdash; &nbsp;</span>
+        <h1>Ismail Shaikhnag</h1>
+      </motion.div>
+
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        className="flex"
+        aria-hidden="true" // prevent the screen reader from reading the text twice
+      >
+        <span aria-hidden="true">&nbsp; &mdash; &nbsp;</span>
         <h1>Ismail Shaikhnag</h1>
       </motion.div>
     </motion.div>
