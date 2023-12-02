@@ -6,8 +6,6 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-import { useWindowWidth } from "@/hooks/useWindowWidth";
-
 const DesktopMenu = dynamic(() => import("./DesktopMenu"), { ssr: false });
 const NavbarButton = dynamic(() => import("./NavbarButton"), { ssr: false });
 import FadeInContent from "../FadeInContent";
@@ -52,22 +50,24 @@ const Navbar = () => {
     >
       <section className="master-container flex h-full items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
-            <Image
-              src="../logos/ismail-white.svg"
-              alt="Logo Of Ismail Shaikhnag"
-              fill
-              priority
-            />
-          </div>
-        </Link>
+        <FadeInContent delay={0.25}>
+          <Link href="/">
+            <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
+              <Image
+                src="../logos/ismail-white.svg"
+                alt="Logo Of Ismail Shaikhnag"
+                fill
+                priority
+              />
+            </div>
+          </Link>
+        </FadeInContent>
 
         {/* will only display on md: screens and above*/}
         <DesktopMenu />
 
         {/* will only display on sm screens */}
-        <FadeInContent delay={0.25} className="md:hidden">
+        <FadeInContent delay={0.5} className="md:hidden">
           <NavbarButton label="Get In Touch" href="#contact" />
         </FadeInContent>
       </section>
