@@ -2,20 +2,17 @@ import React from "react";
 
 import VideoCanvas from "./VideoCanvas";
 import DynamicHeroText from "./DynamicHeroText";
-import SlideInContent from "../SlideInContent";
-import ScrollingName from "./ScrollingName";
 import HeroText from "./HeroText";
+import FadeInContent from "../FadeInContent";
+import HeroIndicators from "./HeroIndicators";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-screen w-full overflow-hidden bg-[rgb(14,14,14)]">
-      <VideoCanvas />
-
+    <section className="relative flex min-h-screen w-full overflow-hidden bg-[rgb(0,0,0)]">
       {/* Hero About */}
-      <div className="absolute inset-0 flex h-full w-full flex-col justify-center gap-y-8">
-          <div className="master-container text-white">
-              <HeroText />
-        </div>
+      <div className="master-container absolute inset-0  h-full w-full text-white">
+          <HeroText />
+        <HeroIndicators />
       </div>
 
       {/* old hero text */}

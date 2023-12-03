@@ -6,7 +6,7 @@ import { Variants, motion, useScroll, useTransform } from "framer-motion";
 const heroText = "Hobbyist Developer & Designer";
 const heroTextArray = heroText.split(" ");
 
-const itemVariants: Variants = {
+const textVariants: Variants = {
   initial: {
     opacity: 0,
     y: "50px",
@@ -14,8 +14,8 @@ const itemVariants: Variants = {
   animate: {
     opacity: 1,
     y: "0px",
-    transition: (index: number) => ({
-      delay: index * 1,
+    transition: (delay: number) => ({
+      delay: delay,
       duration: 1,
       ease: "linear",
     }),
@@ -28,19 +28,32 @@ const HeroText = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
   return (
-    <motion.div
+    <motion.h1
       ref={containerRef}
-      className="relative pb-[10vh] text-center"
-      // style={{ opacity }}
+      className="text-center text-5xl font-extrabold md:text-7xl lg:text-8xl top-1/2 absolute -translate-y-1/2"
+      style={{ opacity }}
     >
-      <h1 className="text-5xl font-extrabold md:max-w-[80%] md:text-7xl lg:text-8xl">
-        <motion.span className={`gradient g1 animate-gradient w-max`}>
-          Hobbyist
-        </motion.span>{" "}
-        <br />
-        <span className="">Developer &amp; Designer</span>
-      </h1>
-    </motion.div>
+      <motion.span
+        variants={textVariants}
+        initial="initial"
+        animate="animate"
+        custom={0.5}
+        role="text"
+        className={`gradient g1 animate-gradient w-max`}
+      >
+        Hobbyist
+      </motion.span>{" "}
+      <br />
+      <motion.span
+        variants={textVariants}
+        initial="initial"
+        animate="animate"
+        custom={0.5}
+        role="text"
+      >
+        Developer &amp; Designer&#46;
+      </motion.span>
+    </motion.h1>
   );
 };
 

@@ -10,17 +10,18 @@ const DesktopMenu = dynamic(() => import("./DesktopMenu"), { ssr: false });
 const NavbarButton = dynamic(() => import("./NavbarButton"), { ssr: false });
 import FadeInContent from "../FadeInContent";
 
-const navbarVariants = {
-  hidden: {
-    y: "-100%",
+const navLineVariants = {
+  initial: {
     opacity: 0,
+    scaleX: 0,
   },
-  visible: {
-    y: 0,
+  animate: {
     opacity: 1,
+    scaleX: 1,
     transition: {
-      duration: 0.25,
-      ease: "easeInOut",
+      delay: 0.5,
+      duration: 0.5,
+      ease: "linear",
     },
   },
 };
@@ -28,31 +29,13 @@ const navbarVariants = {
 const MOBILE_WIDTH = 768;
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latestScrollY) => {
-    const previousScrollY = scrollY.getPrevious();
-
-    if (latestScrollY > 300 && latestScrollY > previousScrollY) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  });
-
   return (
-    <motion.nav
-      variants={navbarVariants}
-      animate={isScrolled ? "hidden" : "visible"}
-      className="fixed top-0 z-40  h-navbar-mobile w-full bg-[#121212d9] text-white  md:h-navbar-desktop"
-      style={{ backdropFilter: "blur(10px) saturate(180%)" }}
-    >
+    <nav className="absolute top-[20px] z-40 h-navbar-mobile  w-full text-white md:top-[60px]  md:h-navbar-desktop">
       <section className="master-container flex h-full items-center justify-between">
         {/* Logo */}
-        <FadeInContent delay={0.25}>
+        <FadeInContent delay={0.35}>
           <Link href="/">
-            <div className="relative h-[40px] w-[130px] md:h-[60px] md:w-[180px]">
+            <div className="relative h-[40px] w-[130px] -translate-y-2 md:h-[60px] md:w-[180px]">
               <Image
                 src="../logos/ismail-white.svg"
                 alt="Logo Of Ismail Shaikhnag"
@@ -63,15 +46,22 @@ const Navbar = () => {
           </Link>
         </FadeInContent>
 
+        {/* Line will only be displayed on md: */}
+        <motion.div
+          variants={navLineVariants}
+          initial="initial"
+          animate="animate"
+          className="mx-16 hidden h-[1px] w-full bg-[#484848] lg:inline-block"
+          style={{ originX: 0 }}
+        />
+
         {/* will only display on md: screens and above*/}
         <DesktopMenu />
 
         {/* will only display on sm screens */}
-        <FadeInContent delay={0.5} className="md:hidden">
-          <NavbarButton label="Get In Touch" href="#contact" />
-        </FadeInContent>
+        <NavbarButton label="Get In Touch" href="#contact" />
       </section>
-    </motion.nav>
+    </nav>
   );
 };
 
