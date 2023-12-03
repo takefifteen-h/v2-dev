@@ -1,43 +1,72 @@
 "use client";
 
-import { Fragment } from "react";
-import { motion } from "framer-motion";
-import { LuArrowDownLeft, LuArrowDown } from "react-icons/lu";
+import { Fragment, useRef } from "react";
+import { Variants, motion, useScroll, useTransform } from "framer-motion";
 
-const gradients = ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9"];
+const heroText = "Hobbyist Developer & Designer";
+const heroTextArray = heroText.split(" ");
 
-const adjectiveVariants = {
-  hidden: {
+const itemVariants: Variants = {
+  initial: {
     opacity: 0,
+    y: "50px",
   },
-  visible: {
+  animate: {
     opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-    },
+    y: "0px",
+    transition: (index: number) => ({
+      delay: index * 1,
+      duration: 1,
+      ease: "linear",
+    }),
   },
 };
 
 const HeroText = () => {
-  return (
-    <div className="relative">
-      <LuArrowDown className="absolute left-0 top-0 -translate-y-8 rotate-[-30deg] text-xl text-white  md:text-2xl lg:text-3xl xl:-top-4 xl:text-4xl " />
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
+  return (
+    <motion.div
+      ref={containerRef}
+      className="relative pb-[10vh] text-center"
+      // style={{ opacity }}
+    >
       <h1 className="text-5xl font-extrabold md:max-w-[80%] md:text-7xl lg:text-8xl">
-        <motion.span
-          variants={adjectiveVariants}
-          initial="visible"
-          animate="visible"
-          className={`gradient g1 animate-gradient w-max`}
-        >
-          Hobbiest
+        <motion.span className={`gradient g1 animate-gradient w-max`}>
+          Hobbyist
         </motion.span>{" "}
         <br />
-        Developer &amp; Designer
+        <span className="">Developer &amp; Designer</span>
       </h1>
-    </div>
+    </motion.div>
   );
 };
 
 export default HeroText;
+
+/* 
+ <motion.span
+          className={`gradient g1 animate-gradient w-max`}
+        >
+          Hobbiest
+        </motion.span>{" "}
+
+         {heroTextArray.map((word, index) => (
+          <motion.span
+            key={index}
+            variants={itemVariants}
+            initial="initial"
+            whileInView="animate"
+            custom={index}
+            className={`${
+              index === 0
+                ? `gradient g${index + 1} animate-gradient`
+                : " inline-block"
+            } font-bold`}
+          >
+            {word}&nbsp;
+          </motion.span>
+        ))}
+*/

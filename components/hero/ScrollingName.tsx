@@ -14,25 +14,27 @@ const ScrollingName: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const scrollX = useTransform(scrollYProgress, [0, 1], ["-1%", "-50%"]);
 
   useMotionValueEvent(scrollYProgress, "change", (latestScrollY) => {
-    console.log("latestScrollY => ", latestScrollY);
+    const netScrollY = latestScrollY - scrollYProgress.getPrevious();
 
-    if (latestScrollY > 0) {
+    console.log("netScrollY => ", netScrollY);
+
+    if (netScrollY > 0) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
     }
   });
 
-  const variants: Variants = {
-    hidden: {
-      x: isScrolled ? "0%" : "-100%",
+  const marqueeVariants: Variants = {
+    initial: {
+      x: "0%",
     },
-    visible: {
+    animate: {
       x: isScrolled ? "-100%" : "-0%",
       transition: {
-        duration: isScrolled ? 5 : 5,
         ease: "linear",
         repeat: Infinity,
         repeatType: "loop",
@@ -43,39 +45,22 @@ const ScrollingName: React.FC = () => {
   return (
     <motion.div
       ref={containerRef}
-      className="flex select-none whitespace-nowrap pb-[10vh] text-[max(7rem,12vw)] font-medium leading-none text-white md:order-2"
+      className="relative h-[250px] w-screen max-w-full select-none overflow-x-hidden pb-[10vh] text-[max(7rem,12vw)] font-medium leading-none text-white md:order-2"
       style={{ opacity }}
     >
       <motion.div
-        variants={variants}
-        initial="hidden"
-        animate="visible"
-        className="flex"
+        className="absolute flex whitespace-nowrap"
+        style={{ x: scrollX }}
       >
-        <span aria-hidden="true">&nbsp; &mdash; &nbsp;</span>
+        <span aria-hidden="true"> &mdash; </span>
         <h1>Ismail Shaikhnag</h1>
-      </motion.div>
 
-      <motion.div
-        variants={variants}
-        initial="hidden"
-        animate="visible"
-        className="flex"
-        aria-hidden="true" // prevent the screen reader from reading the text twice
-      >
-        <span aria-hidden="true">&nbsp; &mdash; &nbsp;</span>
-        <h1>Ismail Shaikhnag</h1>
-      </motion.div>
-
-      <motion.div
-        variants={variants}
-        initial="hidden"
-        animate="visible"
-        className="flex"
-        aria-hidden="true" // prevent the screen reader from reading the text twice
-      >
-        <span aria-hidden="true">&nbsp; &mdash; &nbsp;</span>
-        <h1>Ismail Shaikhnag</h1>
+        {Array.from({ length: 10 }).map((_, i) => (
+          <span aria-hidden="true" key={i} className="flex">
+            <span> &mdash; </span>
+            <h1>Ismail Shaikhnag</h1>
+          </span>
+        ))}
       </motion.div>
     </motion.div>
   );
